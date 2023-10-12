@@ -1,0 +1,72 @@
+app : 
+   version : '@project.version@'
+   name : bdvet-anagrafica
+   
+server:
+  port: ${SANDBOX_SERVICE_PORT:8082}
+  servlet:
+    context-path=/bdvet:
+
+spring:
+#  # Definizione connessione al DB
+   datasource:
+      url: ${SANDBOX_DB_URL:jdbc:h2:mem:testdb}
+      username: ${SANDBOX_DB_USERNAME:sa}
+      password: ${SANDBOX_DB_PASSWORD:sa}
+      driverClassName: ${SANDBOX_DB_DRIVER:org.h2.Driver}
+   jpa:
+      database-platform: ${SANDBOX_DB_DIALECT:org.hibernate.dialect.H2Dialect}
+      hibernate:
+         ddl-auto: ${SANDBOX_DB_DD_CREATE:create}
+   h2:
+      console:
+         enabled: true
+         path: /h2-console
+
+   main:
+      allow-bean-definition-overriding: true
+      
+# Questa sezione abilita la configurazione di sicurezza e l'escape delle PATH che seguono
+security:
+  authorizedPath:
+    - /
+    - /*.html
+    - /favicon.ico
+    - /v2/**
+    - /**/swagger-ui.html
+    - /swagger-ui.html
+    - /swagger-ui/*
+    - /swagger-resources/**
+    - /**/swagger-resources/**
+    - /**/*.html
+    - /**/public/**
+    - /ws/**
+    - /webjars/**
+    - /**/actuator/**
+    - /error
+    - /h2-console/**
+
+# Questa sezione abilita gli aspetti di LOG, AUDIT e TRACE
+aspect:
+  loggable: ${SANDBOX_aspect_LOGGABLE:true}
+  auditble: ${SANDBOX_aspect_AUDITBLE:true}
+  traceble: ${SANDBOX_aspect_TRACEBLE:true}
+
+
+---
+### LOCAL PROFILE
+spring:
+  config:
+    activate:
+      on-profile: local
+
+---
+### DEV TEST PROFILE
+spring:
+  config:
+    activate:
+      on-profile: dev,test
+
+
+
+
