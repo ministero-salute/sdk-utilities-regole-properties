@@ -4,42 +4,17 @@
         <Property name="LOG_PATTERN">$${env:LOGPATTERN:-%d %level %logger %msg %n}</Property>
         <Property name="LOGLEVEL"> $${env:LOG_LEVEL:-DEBUG} </Property>
     </Properties>
+
     <Appenders>
         <Console name="console" >
-             <PatternLayout pattern="${LOG_PATTERN}" />
-          <!--   <JsonLayout complete="false" compact="false" >
-                Custom key value pair
-            	<KeyValuePair key="myvalue" value="$${ctx:id}" />
-        	</JsonLayout>
-        	<provider class="net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider"/> -->
+         <PatternLayout pattern="${LOG_PATTERN}" />
         </Console>
     </Appenders>
+
     <Loggers>
-	    <logger name="it.mds" level="${LOGLEVEL}" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-<!--		<logger name="springfox" level="INFO" additivity="false">-->
-<!--			<appender-ref ref="console" />-->
-<!--		</logger>-->
-		<logger name="org.springframework" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		<logger name="org.apache" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		<logger name="org.hibernate" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		<logger name="com.zaxxer.hikari" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		<logger name="reactor" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		<logger name="io" level="INFO" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-		
+       <logger name="it.mds" level="${LOGLEVEL}" additivity="false">
+            <AppenderRef ref="console" />
+        </logger>
         <Root level="${LOGLEVEL}">
             <AppenderRef ref="console" />
         </Root>
