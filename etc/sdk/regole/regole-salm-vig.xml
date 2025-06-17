@@ -1,0 +1,3023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+   <campo nomecampo="accredproc">
+      <regola codiceErrore="DR063" descrizioneErrore="Codice DR063" nome="regolaDR063">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR063</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR001" descrizioneErrore="Codice BR001" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="paramcode">
+      <regola codiceErrore="BR002" descrizioneErrore="Codice BR002" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR130" descrizioneErrore="Codice BR130" nome="regolaBR130"/>
+      <regola codiceErrore="BR193" descrizioneErrore="Codice BR193" nome="regolaListaValoriAmmessiSubStringCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>sampmatcodeBuilding</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>A0BNB</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionanteDue</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000085-CHE|RF-00000087-CHE</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR194" descrizioneErrore="Codice BR194" nome="regolaListaValoriAmmessiSubStringCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>sampmatcodeBuilding</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>A0BNB</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionanteDue</key>
+                  <value>1881</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000085-CHE|RF-00000087-CHE</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="">
+      <regola codiceErrore="BR003" descrizioneErrore="Codice BR003" nome="regolaControlloUnicitaOggetto">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campiConcatenati</key>
+                  <value>paramcode#sampid#sampanid#anportseq</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="paramtype">
+      <regola codiceErrore="BR005" descrizioneErrore="Codice BR005" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR077" descrizioneErrore="Codice BR077" nome="regolaDominioValoreAnagraficaParamType">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_DESCRIPTOR6</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR058" descrizioneErrore="Codice DR058" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR058</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="progid">
+      <regola codiceErrore="BR200" descrizioneErrore="Codice BR200" nome="regolaDominioValoriAnagraficaSplitTreCampi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_TAB_FSA_LEGIS_PARAM_EVALLIMIT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR195" descrizioneErrore="Codice BR195" nome="regolaBR195">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_TAB_FSA_BUILDING_LEGIS</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR009" descrizioneErrore="Codice BR009" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progtype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>K022A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>MON</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR210" descrizioneErrore="Codice BR210" nome="regolaDominioValoriAnagraficaSplittatiCampoDiverso">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCondizionante</key>
+                  <value>samppoint</value>
+               </entry>
+               <entry>
+                  <key>valoreCondizionante2</key>
+                  <value>sampunittype</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>PNR</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_REL_PROGLEGREF_PROGID</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR161" descrizioneErrore="Codice BR161" nome="regolaListaValoriAmmessiCampoUgualeCampoDiversoDaLista">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>anmethtype</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>AT06A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriNonAmmessi</key>
+                  <value>MCG|MON</value>
+               </entry>
+               <entry>
+                  <key>listaValoriNonAmmessiDue</key>
+                  <value>J003A|J041A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR178" descrizioneErrore="Codice BR178" nome="regolaListaValoriAmmessiCampoUgualeCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>evalinfoSampanasses</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>evalinfoSamptkasses</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>J038A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriNonAmmessi</key>
+                  <value>VIG001CP|MON</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR007" descrizioneErrore="Codice DR007" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR007</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR059" descrizioneErrore="Codice DR059" nome="regolaDR059"/>
+   </campo>
+   <campo nomecampo="rapprovaDate">
+      <regola codiceErrore="BR010" descrizioneErrore="Codice BR010" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethrefid">
+      <regola codiceErrore="BR011" descrizioneErrore="Codice BR011" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="reslod">
+      <regola codiceErrore="BR014" descrizioneErrore="Codice BR014" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>LOD</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR015" descrizioneErrore="Codice BR015" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR016" descrizioneErrore="Codice BR016" nome="regolaValoreMinoreDiUnCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>resloq</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethtext">
+      <regola codiceErrore="BR018" descrizioneErrore="Codice BR018" nome="regolaObbligatorietaListaAmmessiPerSingoloCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>anmethcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>F001A|F500A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR026" descrizioneErrore="Codice BR026" nome="regolaListaValoriAmmessiCondizionataListaValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessiCampoCondizionante</key>
+                  <value>RF-00002832-PAR|RF-00002833-PAR|RF-00002834-PAR|RF-00001344-PAR|RF-00000377-ORG|RF-00000380-ORG|RF-00000378-ORG</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>AOCS1|AOCS2|AOCS3</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resloq">
+      <regola codiceErrore="BR012" descrizioneErrore="Codice BR012" nome="regolaDominioValoreAnagraficaResloq">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>progId</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>paramCode</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>resInfoNotSummed</key>
+                  <value>resinfoNotsummed</value>
+               </entry>
+               <entry>
+                  <key>accredproc</key>
+                  <value>accredproc</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_DESCRIPTOR1VET</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR019" descrizioneErrore="Codice BR019" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>LOQ</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR020" descrizioneErrore="Codice BR020" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resqualvalue">
+      <regola codiceErrore="BR135" descrizioneErrore="Codice BR135" nome="regolaCampoCondizionatoQuattroValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante3</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>MCG</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>RF-00011484-PAR</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante3</key>
+                  <value>J041A</value>
+               </entry>
+               <entry>
+                  <key>parametroDaValidare</key>
+                  <value>POS</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR021" descrizioneErrore="Codice BR021" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>BIN</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR022" descrizioneErrore="Codice BR022" nome="regolaObbligatorietaNullCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>anmethtype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>AT08A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR023" descrizioneErrore="Codice BR023" nome="regolaObbligatorietaNullCondizionataValoreDiversoCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>BIN</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR067" descrizioneErrore="Codice DR067" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR067</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resval">
+      <regola codiceErrore="BR024" descrizioneErrore="Codice BR024" nome="regolaObbligatorietaNullCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>BIN</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR034" descrizioneErrore="Codice BR034" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>VAL</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR035" descrizioneErrore="Codice BR035" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR036" descrizioneErrore="Codice BR036" nome="regolaObbligatorietaNullCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>LOD</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR038" descrizioneErrore="Codice BR038" nome="regolaObbligatorietaResType">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>resloq</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>VAL</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>restype</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR039" descrizioneErrore="Codice BR039" nome="regolaObbligatorietaResType">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>reslod</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>VAL</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>restype</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR040" descrizioneErrore="Codice BR040" nome="regolaCampiUgualiEValorizzatiConfronto">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>evallowlimit</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionanteDue</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>J002A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR041" descrizioneErrore="Codice BR041" nome="regolaCampiUgualiEValorizzatiConfronto">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>evallowlimit</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionanteDue</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>J002A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR138" descrizioneErrore="Codice BR138" nome="regolaListaValoriAmmessiCampoDiversoCampoMaggiore">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evallimittype</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionanteDue</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionanteTre</key>
+                  <value>evallowlimit</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>W005A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J003A|J031A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR139" descrizioneErrore="Codice BR139" nome="regolaListaValoriAmmessiCondizionataCampoMaggiore">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>evalhighlimit</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J003A|J038A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="restype">
+      <regola codiceErrore="BR136" descrizioneErrore="Codice BR136" nome="regolaListaValoriAmmessiCondizionataListaValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessiCampoCondizionante</key>
+                  <value>ADD|PSD|MCG</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>VAL|LOD|LOQ|BIN</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR025" descrizioneErrore="Codice BR025" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR037" descrizioneErrore="Codice BR037" nome="regolaListaValoriAmmessiCondizionataDueCampiUguali">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>resval</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionante2</key>
+                  <value>resloq</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>LOQ|VAL</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR048" descrizioneErrore="Codice BR048" nome="regolaIncoerenzaCrossCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreConfronto</key>
+                  <value>VAL</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCoerente</key>
+                  <value>anmethtype</value>
+               </entry>
+               <entry>
+                  <key>listaValoriIncoerenti</key>
+                  <value>AT06A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR056" descrizioneErrore="Codice BR056" nome="regolaCondizionataDaDueCampi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCampoValidare</key>
+                  <value>BIN</value>
+               </entry>
+               <entry>
+                  <key>campoDipendente1</key>
+                  <value>anmethtype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoDipendente1</key>
+                  <value>AT06A</value>
+               </entry>
+               <entry>
+                  <key>campoDipendente2</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoDipendente2</key>
+                  <value>MCG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR157" descrizioneErrore="Codice BR157" nome="regolaListaValoriAmmessiCampoDiversoCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>evallimittype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>W012A</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionanteDue</key>
+                  <value>VAL</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J003A|J031A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR068" descrizioneErrore="Codice DR068" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR068</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resunit">
+      <regola codiceErrore="BR189" descrizioneErrore="Codice BR189" nome="regolaCampoCondizionatoTreValoriCampoDiverso">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N112A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>A163R</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR031" descrizioneErrore="Codice BR031" nome="regolaCampoCondizionatoTreValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N112A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>G061A|G062A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR190" descrizioneErrore="Codice BR190" nome="regolaCampoCondizionatoTreValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N112A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>G061A|G062A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR191" descrizioneErrore="Codice BR191" nome="regolaCampoCondizionatoTreValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N262A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>G061A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR032" descrizioneErrore="Codice BR032" nome="regolaCampoCondizionatoTreValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N262A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>G061A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR028" descrizioneErrore="Codice BR028" nome="regolaObbligatorietaCondizionataDa1aNCampi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaCampi</key>
+                  <value>reslod|resloq|resval|ccalpha|ccbeta|resvaluncertsd|resvaluncert|evallowlimit|evalhighlimit|resulwr|resllwr</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR030" descrizioneErrore="Codice BR030" nome="regolaDominioValoreAnagraficaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>G076A|G050A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethtype">
+      <regola codiceErrore="BR033" descrizioneErrore="Codice BR033" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR042" descrizioneErrore="Codice BR042" nome="regolaListaValoriAmmessiCondizionataCampoDiverso">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>MCG</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>AT06A|AT08A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR061" descrizioneErrore="Codice DR061" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR061</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resvalrec">
+      <regola codiceErrore="BR043" descrizioneErrore="Codice BR043" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR045" descrizioneErrore="Codice BR045" nome="regolaObbligatorietaCondizionataCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>resvalreccorr</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resvaluncert">
+      <regola codiceErrore="BR046" descrizioneErrore="Codice BR046" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resvaluncertsd">
+      <regola codiceErrore="BR047" descrizioneErrore="Codice BR047" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampanid">
+      <regola codiceErrore="BR050" descrizioneErrore="Codice BR050" nome="regolaUguaglianzaCrossCampoSeValorizzati">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampid</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR051" descrizioneErrore="Codice BR051" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>RF-00000073-ORG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampid">
+      <regola codiceErrore="BR052" descrizioneErrore="Codice BR052" nome="regolaCampoUgualeAPrimiQuattroCaratteri">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>sampDate</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR220" descrizioneErrore="Codice BR220" nome="regolaBR220"/>
+      <regola codiceErrore="BR054" descrizioneErrore="Codice BR054" nome="regolaCampoUgualeAiCaratteriDopoSplit">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>labaccett</value>
+               </entry>
+               <entry>
+                  <key>splitter</key>
+                  <value>_</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="ccalpha">
+      <regola codiceErrore="BR017" descrizioneErrore="Codice BR017" nome="regolaObbligatorietaPerAlmenoUnCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>accredproc</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionante2</key>
+                  <value>resinfoNotsummed</value>
+               </entry>
+               <entry>
+                  <key>campoDaValidare1</key>
+                  <value>ccbeta</value>
+               </entry>
+               <entry>
+                  <key>campoDaValidare2</key>
+                  <value>reslod</value>
+               </entry>
+               <entry>
+                  <key>campoDaValidare3</key>
+                  <value>resloq</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR071" descrizioneErrore="Codice BR071" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>CCA</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR074" descrizioneErrore="Codice BR074" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR075" descrizioneErrore="Codice BR075" nome="regolaValoreMinoreDiUnCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>ccbeta</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR066" descrizioneErrore="Codice BR066" nome="regolaDominioValoreAnagraficaCCAlpha"/>
+   </campo>
+   <campo nomecampo="acttakencode">
+      <regola codiceErrore="DR072" descrizioneErrore="Codice DR072" nome="regolaDR072">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabellaAction</key>
+                  <value>ANAG_SALM_DR072_ACTION</value>
+               </entry>
+                <entry>
+                  <key>nomeTabellaUnit</key>
+                  <value>ANAG_SALM_DR072_UNIT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR078" descrizioneErrore="Codice BR078" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evalinfoSamptkasses</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>J038A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR226" descrizioneErrore="Codice BR226" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evalinfoSampanasses</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>J038A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="ccbeta">
+      <regola codiceErrore="BR081" descrizioneErrore="Codice BR081" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>CCB</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR083" descrizioneErrore="Codice BR083" nome="regolaControlloValoreMaggioreZero">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>0.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampaccDate">
+       <regola codiceErrore="BR085" descrizioneErrore="Codice BR085" nome="regolaIntervalloDate">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>startDate</key>
+                  <value>sampDate</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evalcode">
+      <regola codiceErrore="BR087" descrizioneErrore="Codice BR087" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR088" descrizioneErrore="Codice BR088" nome="regolaIncoerenzaCrossCampo2">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>valoreConfronto</key>
+                  <value>BIN</value>
+               </entry>
+               <entry>
+                  <key>listaValoriIncoerenti</key>
+                  <value>J040A|J041A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR090" descrizioneErrore="Codice BR090" nome="regolaListaValoriAmmessiCondizionataCampoUguale2">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>anmethtype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>AT08A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J003A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR155" descrizioneErrore="Codice BR155" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>restype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>BIN</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J040A|J041A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR156" descrizioneErrore="Codice BR156" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evallimittype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>W002A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J002A|J003A|J031A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR158" descrizioneErrore="Codice BR158" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evallimittype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>W012A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J040A|J041A|J029A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR172" descrizioneErrore="Codice BR172" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evalinfoSampanasses</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>J037A</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J031A|J002A|J040A|J029A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR071" descrizioneErrore="Codice DR071" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR071</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evallowlimit">
+      <regola codiceErrore="BR094" descrizioneErrore="Codice BR094" nome="regolaValoreMinoreDiUnCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evalhighlimit</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR107" descrizioneErrore="Codice BR107" nome="regolaObbligatorietaCondizionataCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evalhighlimit</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR177" descrizioneErrore="Codice BR177" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>evallimittype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>W990A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evalinfoSamptkasses">
+      <regola codiceErrore="BR098" descrizioneErrore="Codice BR098" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J037A|J038A|J029A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR099" descrizioneErrore="Codice BR099" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR073" descrizioneErrore="Codice DR073" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR073</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evallimittype">
+      <regola codiceErrore="BR202" descrizioneErrore="Codice BR202" nome="regolaDominioValoriAnagraficaCampoUgualeCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>W005A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR201" descrizioneErrore="Codice BR201" nome="regolaCampoCondizionatoQuattroValoriAnd">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>sampmatcodeLegis</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante3</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>A0C3L</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante3</key>
+                  <value>RF-00000046-ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroDaValidare</key>
+                  <value>W001A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR199" descrizioneErrore="Codice BR199" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>W001A|W990A|W005A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR102" descrizioneErrore="Codice BR102" nome="regolaObbligatorietaCondizionataCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR174" descrizioneErrore="Codice BR174" nome="regolaObbligatorietaCampoDiversoDaParam">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoValidatore</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>primoParametroInputDaConfrontare</key>
+                  <value>J040A</value>
+               </entry>
+               <entry>
+                  <key>secondoParametroInputDaConfrontare</key>
+                  <value>J029A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR070" descrizioneErrore="Codice DR070" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR070</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="altromotivononidoneo">
+      <regola codiceErrore="BR105" descrizioneErrore="Codice BR105" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>motivononidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Ni11</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="exprrespercAlcoholperc">
+      <regola codiceErrore="BR108" descrizioneErrore="Codice BR108" nome="regolaIntervalloMinMax">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroMin</key>
+                  <value>0.0</value>
+               </entry>
+               <entry>
+                  <key>parametroMax</key>
+                  <value>100.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="exprrespercFatperc">
+      <regola codiceErrore="BR109" descrizioneErrore="Codice BR109" nome="regolaIntervalloMinMax">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroMin</key>
+                  <value>0.0</value>
+               </entry>
+               <entry>
+                  <key>parametroMax</key>
+                  <value>100.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR111" descrizioneErrore="Codice BR111" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>exprrestype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>B003A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR179" descrizioneErrore="Codice BR179" nome="regolaDominioValoreAnagraficaExpressPercFatPerc">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>paramCode</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_DESCRIPTOR_9-10-11</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR180" descrizioneErrore="Codice BR180" nome="regolaDominioValoreAnagraficaExpressPercFatPercRF">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>paramCode</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>sampMatCodeBuilding</key>
+                  <value>sampmatcodeBuilding</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_PARENT</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessiRF</key>
+                  <value>RF-00000001-PPP|RF-00011520-PAR</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessiA</key>
+                  <value>A02LT|A04HG|A02MC|A02MB|A02MF|A04HN|A031G|A031H|A031J|A031K|A031L</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="analysisEndDate">
+      <regola codiceErrore="BR110" descrizioneErrore="Codice BR110" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="analysisStartDate">
+      <regola codiceErrore="BR113" descrizioneErrore="Codice BR113" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="labanalisi">
+      <regola codiceErrore="BR114" descrizioneErrore="Codice BR114" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <!--<regola codiceErrore="BR185" descrizioneErrore="Codice BR185" nome="regolaBR185"/> -->
+      <regola codiceErrore="DR057" descrizioneErrore="Codice DR057" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR057</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="labcountry">
+      <regola codiceErrore="BR115" descrizioneErrore="Codice BR115" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR056" descrizioneErrore="Codice DR056" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR056</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="motivononidoneo">
+      <regola codiceErrore="BR116" descrizioneErrore="Codice BR116" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>N</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR023" descrizioneErrore="Codice DR023" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR023</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethcode">
+      <regola codiceErrore="BR119" descrizioneErrore="Codice BR119" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR062" descrizioneErrore="Codice DR062" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR062</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampsizeunit">
+      <regola codiceErrore="BR122" descrizioneErrore="Codice BR122" nome="regolaObbligatorietaCondizionataCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampsize</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="samppoint">
+      <regola codiceErrore="BR127" descrizioneErrore="Codice BR127" nome="regolaListaValoriAmmessiCondizionataCampoDiversoSeconda">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>origcountry</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>IT</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>MS.F00.010|MS.F00.020</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR205" descrizioneErrore="Codice BR205" nome="regolaDominioCampoUgualeValoreAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>sampmatcodeGen</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>produzione</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_SMPNT_ITA</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR006" descrizioneErrore="Codice DR006" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR006</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="origcountry">
+      <regola codiceErrore="BR129" descrizioneErrore="Codice BR129" nome="regolaCampoCondizionatoDueValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>origreg</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>0UE</value>
+               </entry>
+               <entry>
+                  <key>parametroDaValidare</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR040" descrizioneErrore="Codice DR040" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR040</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="trattamentoSino">
+      <regola codiceErrore="BR141" descrizioneErrore="Codice BR141" nome="regolaDominioValoreAnagraficaTrattamentoSINO">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_DESCRIPTOR1VET</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>MS.B10.100|MS.B20.100|MS.B30.100</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR019" descrizioneErrore="Codice DR019" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR019</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampinfoOrigsampid">
+      <regola codiceErrore="BR142" descrizioneErrore="Codice BR142" nome="regolaObbligatorietaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>sampstrategy</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>ST30A</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionante2</key>
+                  <value>tipcamp</value>
+               </entry>
+               <entry>
+                  <key>valoreParametro</key>
+                  <value>S</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmattext">
+      <regola codiceErrore="BR148" descrizioneErrore="Codice BR148" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampmatcodeGen</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>A07XE</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR148" descrizioneErrore="Codice BR148" nome="regolaMaxLunghezzaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>250</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodePackmat">
+      <regola codiceErrore="BR149" descrizioneErrore="Codice BR149" nome="regolaDominioValoreAnagraficaSampMatCodePackMat">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_PARENT</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000040-ORG|RF-00001240-PAR</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR032" descrizioneErrore="Codice DR032" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR032</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeProcess">
+      <regola codiceErrore="BR150" descrizioneErrore="Codice BR150" nome="regolaObbligatorietaListaAmmessiPerSingoloCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000015-CHE|RF-00001336-PAR</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR207" descrizioneErrore="Codice BR207" nome="regolaListaValoriAmmessiCondizionataListaValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessiCampoCondizionante</key>
+                  <value>RF-PH-ITA-CHE|RF-AW-ITA-CHE|RF-PS-ITA-CHE</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>A0BYP|A0CHV|A066E|A07HY|A07HX|A07HT|A07HZ|A07HV</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR038" descrizioneErrore="Codice DR038" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR038</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="exprrestype">
+      <regola codiceErrore="BR057" descrizioneErrore="Codice BR057" nome="regolaBR057"/>
+      <regola codiceErrore="BR212" descrizioneErrore="Codice BR212" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>sampmattype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>S026A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR066" descrizioneErrore="Codice DR066" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR066</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethrefid">
+      <regola codiceErrore="BR006" descrizioneErrore="Codice BR006" nome="regolaBR006"/>
+   </campo>
+   <campo nomecampo="sampidoneo">
+      <regola codiceErrore="BR086" descrizioneErrore="Codice BR086" nome="regolaValoreUgualeCondizionatoDateMinori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>sampDate</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionante2</key>
+                  <value>sampaccDate</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionante3</key>
+                  <value>analysisStartDate</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionante4</key>
+                  <value>analysisEndDate</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionante5</key>
+                  <value>rapprovaDate</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR022" descrizioneErrore="Codice DR022" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR022</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="">
+      <regola codiceErrore="BR118" descrizioneErrore="Codice BR118" nome="regolaControlloUnicitaOggetto">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campiConcatenati</key>
+                  <value>paramcode#sampid#anportseq</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="codazallorig">
+      <regola codiceErrore="BR154" descrizioneErrore="Codice BR154" nome="regolaCampoNotNullCondizionatoUnValoreUnCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>samppoint</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>MS.060.400</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>osaid</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evalinfoResasses">
+      <regola codiceErrore="BR169" descrizioneErrore="Codice BR169" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>J038A|J037A|null</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR076" descrizioneErrore="Codice DR076" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR076</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="exprrespercMoistperc">
+      <regola codiceErrore="BR183" descrizioneErrore="Codice BR183" nome="regolaDominioValoreAnagraficaSampMatCodePackMat">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_PARAM_PARENT</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000396-ORG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR181" descrizioneErrore="Codice BR181" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>exprrestype</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>B002A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR182" descrizioneErrore="Codice BR182" nome="regolaIntervalloMinMax">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroMin</key>
+                  <value>0.0</value>
+               </entry>
+               <entry>
+                  <key>parametroMax</key>
+                  <value>100.0</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="infoFarmaco">
+      <regola codiceErrore="BR216" descrizioneErrore="Codice BR216" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>trattamentoSino</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="samporg">
+      <regola codiceErrore="BR063" descrizioneErrore="Codice BR063" nome="regolaBR063">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>CN|DO|EG|IN|KE|KH|MY|PK|TH|TR|UG|VN</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR236" descrizioneErrore="Codice BR236" nome="regolaBR236">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreControllo</key>
+                  <value>regcode</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR011" descrizioneErrore="Codice DR011" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR011</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeBuilding">
+      <regola codiceErrore="DR027" descrizioneErrore="Codice DR027" nome="regolaDR027"/>
+      <regola codiceErrore="BR029" descrizioneErrore="Codice BR029" nome="regolaDominioValoreAnagraficaCampoUgualeCampoSplittato">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>campoCondizionante</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>N028A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="osaid">
+      <regola codiceErrore="BR123" descrizioneErrore="Codice BR123" nome="regolaBR123"/>
+   </campo>
+   <campo nomecampo="proglegalref">
+      <regola codiceErrore="BR131" descrizioneErrore="Codice BR131" nome="regolaBR131"/>
+   </campo>
+   <campo nomecampo="evalinfoSampanasses">
+      <regola codiceErrore="BR170" descrizioneErrore="Codice BR170" nome="regolaDominioCampoObbligatorioValoreAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>valoreCondizionante</key>
+                  <value>evalcode</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_REL_EVALCODE_SMPASSESS</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR075" descrizioneErrore="Codice DR075" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR075</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <!-- <campo nomecampo="sampmatcodePackmat">
+    </campo> -->
+   <campo nomecampo="sampstrategy">
+      <regola codiceErrore="BR065" descrizioneErrore="Codice BR065" nome="regolaListaValoriAmmessiCondizionataCampoDiverso">
+         <parametri>
+            <parametriMap>
+                           <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>PSD</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>ST20A|ST30A|ST90A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR002" descrizioneErrore="Codice DR002" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR002</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="progtype">
+      <regola codiceErrore="BR007" descrizioneErrore="Codice BR007" nome="regolaListaValoriAmmessiCondizionataCampoDiverso">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>PNR</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>K005A|K009A|K018A|K019A|K022A</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR003" descrizioneErrore="Codice DR003" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR003</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmethod">
+      <regola codiceErrore="DR004" descrizioneErrore="Codice DR004" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR004</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampler">
+      <regola codiceErrore="DR005" descrizioneErrore="Codice DR005" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR005</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="regcode">
+      <regola codiceErrore="DR008" descrizioneErrore="Codice DR008" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR008</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="optype">
+      <regola codiceErrore="DR009" descrizioneErrore="Codice DR009" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>I|C</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="tipcamp">
+      <regola codiceErrore="DR010" descrizioneErrore="Codice DR010" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR010</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampunittype">
+      <regola codiceErrore="DR012" descrizioneErrore="Codice DR012" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR012</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="provincia">
+      <regola codiceErrore="DR017" descrizioneErrore="Codice DR017" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR017</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="citta">
+      <regola codiceErrore="DR018" descrizioneErrore="Codice DR018" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR018</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampsize">
+      <regola codiceErrore="DR020" descrizioneErrore="Codice DR020" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR020</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR064" descrizioneErrore="Codice DR064" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR064</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="origreg">
+      <regola codiceErrore="DR021" descrizioneErrore="Codice DR021" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR021</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="modalitallevamento">
+      <regola codiceErrore="DR025" descrizioneErrore="Codice DR025" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR025</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmattype">
+      <regola codiceErrore="DR026" descrizioneErrore="Codice DR026" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR026</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeSource">
+      <regola codiceErrore="DR028" descrizioneErrore="Codice DR028" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR028</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodePartNature">
+      <regola codiceErrore="DR029" descrizioneErrore="Codice DR029" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR029</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodePackformat">
+      <regola codiceErrore="DR031" descrizioneErrore="Codice DR031" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR031</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodePartconsumed">
+      <regola codiceErrore="DR033" descrizioneErrore="Codice DR033" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR033</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeProductionMethod">
+      <regola codiceErrore="DR034" descrizioneErrore="Codice DR034" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR034</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodePlace">
+      <regola codiceErrore="DR035" descrizioneErrore="Codice DR035" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR035</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeUse">
+      <regola codiceErrore="BR147" descrizioneErrore="Codice BR147" nome="regolaObbligatorietaListaValoriAmmessiPerCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>valoreParametro</key>
+                  <value>MOC</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>ADD|1881|MCG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR036" descrizioneErrore="Codice DR036" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR036</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeGen">
+      <regola codiceErrore="BR151" descrizioneErrore="Codice BR151" nome="regolaObbligatorietaListaAmmessiPerSingoloCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>ADD|1881|MCG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR037" descrizioneErrore="Codice DR037" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR037</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeLegis">
+      <regola codiceErrore="BR206" descrizioneErrore="Codice BR206" nome="regolaDominioValoreAnagraficaCondizionataListaValoriAmmessiCampoUguale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000085-CHE|RF-00000087-CHE</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_ANAGRAFICA_LEGIS_FLAGBR206</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR197" descrizioneErrore="Codice BR197" nome="regolaObbligatorietaSuDueCampiConValoreParametroPrefissato">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>nomeCampoCondizionante2</key>
+                  <value>paramcode</value>
+               </entry>
+               <entry>
+                  <key>valoreParametroPerCampo1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>valoreParametroPerCampo2</key>
+                  <value>RF-00000410-ORG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR189" descrizioneErrore="Codice BR189" nome="regolaCampoCondizionatoTreValoriCampoDiverso">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N112A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>A163R</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="BR192" descrizioneErrore="Codice BR192" nome="regolaCampoCondizionatoTreValori">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCondizionante1</key>
+                  <value>ADD</value>
+               </entry>
+               <entry>
+                  <key>parametroCondizionante2</key>
+                  <value>N262A</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante1</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>campoCondizionante2</key>
+                  <value>proglegalref</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>A163R</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR039" descrizioneErrore="Codice DR039" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR039</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="origfishareacode">
+      <regola codiceErrore="BR128" descrizioneErrore="Codice BR128" nome="regolaDominioValoreAnagraficaOrigfishAreaCode">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabellaAnagraficaReport</key>
+                  <value>ANAG_SALM_ANAGRAFICA_REPORT</value>
+               </entry>
+                <entry>
+                  <key>nomeTabellaParamParent</key>
+                  <value>ANAG_SALM_PARAM_PARENT</value>
+               </entry>
+                <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>RF-00000074-ORG|RF-00000114-ORG|RF-00000169-CHE</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="DR041" descrizioneErrore="Codice DR041" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR041</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="aetate">
+      <regola codiceErrore="DR042" descrizioneErrore="Codice DR042" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR042</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmatcodeBuilding">
+      <regola codiceErrore="DR043" descrizioneErrore="Codice DR043" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR043</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="labaccett">
+      <regola codiceErrore="DR054" descrizioneErrore="Codice DR054" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR054</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="labaccred">
+      <regola codiceErrore="DR055" descrizioneErrore="Codice DR055" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR055</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anmethrefcode">
+      <regola codiceErrore="DR060" descrizioneErrore="Codice DR060" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR060</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resvalreccorr">
+      <regola codiceErrore="DR065" descrizioneErrore="Codice DR065" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR065</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="resinfoNotsummed">
+      <regola codiceErrore="DR069" descrizioneErrore="Codice DR069" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR069</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="evalinfoConclusion">
+      <regola codiceErrore="DR074" descrizioneErrore="Codice DR074" nome="regolaDominioAnagraficaSampDateValidoSampIdoneo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR074</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeCookext">
+      <regola codiceErrore="DR100" descrizioneErrore="Codice DR100" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR100</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeTargetConsumer">
+      <regola codiceErrore="DR101" descrizioneErrore="Codice DR101" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR101</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeSourceCommodities">
+      <regola codiceErrore="DR102" descrizioneErrore="Codice DR102" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR102</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeGender">
+      <regola codiceErrore="DR103" descrizioneErrore="Codice DR103" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR103</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeAnimalAgeClass">
+      <regola codiceErrore="DR104" descrizioneErrore="Codice DR104" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR104</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeReproductiveLevel">
+      <regola codiceErrore="DR105" descrizioneErrore="Codice DR105" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR105</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeQualitativeInfo">
+      <regola codiceErrore="DR106" descrizioneErrore="Codice DR106" nome="regolaDominioAnagraficaSampDateValido">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR106</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="sampmatcodeIngred">
+      <regola codiceErrore="DR030" descrizioneErrore="Codice DR030" nome="regolaCampoSplittatoDominioValoreAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_SALM_DR030</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="anportseq">
+      <regola codiceErrore="BR059" descrizioneErrore="Codice BR059" nome="regolaCampoUgualeListaValoriAmmessiCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>Y</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionante</key>
+                  <value>sampidoneo</value>
+               </entry>
+               <entry>
+                  <key>valoreCampoCondizionanteDue</key>
+                  <value>progid</value>
+               </entry>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>MOC|MCG</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+</flusso>

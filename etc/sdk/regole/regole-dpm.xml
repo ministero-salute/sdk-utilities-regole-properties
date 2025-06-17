@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+   <campo nomecampo="donatoreMinorenne">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>SI|NO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="tipoAtto">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>MANIFESTAZIONE_CONSENSO|REVOCA_CONSENSO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="tipoDisponente">
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessiCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>GENITORE|TUTORE_SOGGETTI_AFFIDATARI</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola> 	  
+	  <regola codiceErrore="5556" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorietaTutoriSoggettiAffidatari">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaCampiDonatore</key>
+                  <value>donatoreLuogoNascitaCodiceNazione|donatoreLuogoNascitaCodiceRegione|donatoreLuogoNascitaCodiceProvincia|donatoreLuogoNascitaCodiceComune|donatoreLuogoResidenzaCodiceNazione|donatoreLuogoResidenzaCodiceRegione|donatoreLuogoResidenzaCodiceProvincia|donatoreLuogoResidenzaCodiceComune|donatoreNome|donatoreCognome|donatoreCF|donatoreDataNascita|donatoreIndirizzoResidenza|donatoreCapResidenza</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDisponenti2</key>
+                  <value>disponenti2ConsensoEmail|disponenti2LuogoNascitaCodiceNazione|disponenti2LuogoNascitaCodiceRegione|disponenti2LuogoNascitaCodiceProvincia|disponenti2LuogoNascitaCodiceComune|disponenti2LuogoResidenzaCodiceNazione|disponenti2LuogoResidenzaCodiceRegione|disponenti2LuogoResidenzaCodiceProvincia|disponenti2LuogoResidenzaCodiceComune|disponenti2Nome|disponenti2Cognome|disponenti2CF|disponenti2DataNascita|disponenti2IndirizzoResidenza|disponenti2CapResidenza|disponenti2Email</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>    
+   </campo>
+   <campo nomecampo="formatoAtto">
+      <regola codiceErrore="5600" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>FORMA_SCRITTA|FORMA_AUDIO_VIDEO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="dataSottoscrizione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="idSoggettoAlimentante">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5300" descrizioneErrore="Formato errato" nome="regolaMaxLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>100</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5300" descrizioneErrore="Formato errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>[a-zA-Z0-9\.\\\[\]\(\)_-]{1,150}</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1CapResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2CapResidenza">
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegexCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1CF">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	  <regola codiceErrore="5555" descrizioneErrore="Struttura Codice Fiscale non coerente ai dati Anagrafici" nome="regolaVerificaCodiceFiscale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroDataNascita</key>
+                  <value>disponenti1DataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5003" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaIntervalloLunghezza">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>minLunghezza</key>
+                  <value>16</value>
+               </entry>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>16</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2CF">
+	  <regola codiceErrore="5555" descrizioneErrore="Struttura Codice Fiscale non coerente ai dati Anagrafici" nome="regolaVerificaCodiceFiscale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroDataNascita</key>
+                  <value>disponenti2DataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5003" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaIntervalloLunghezza">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>minLunghezza</key>
+                  <value>16</value>
+               </entry>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>16</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1Cognome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1ConsensoEmail">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>SI|NO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2ConsensoEmail">
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessiCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>SI|NO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1DataNascita">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2DataNascita">
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegexCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1Email">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1IndirizzoResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1Nome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1LuogoNascitaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoNascitaCodiceNazione">
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1LuogoNascitaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti1LuogoNascitaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoNascitaCodiceRegione">
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti2LuogoNascitaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1LuogoNascitaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1LuogoNascitaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	  <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>disponenti1LuogoNascitaCodiceComune|disponenti1LuogoNascitaCodiceProvincia|disponenti1LuogoNascitaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti1LuogoNascitaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoNascitaCodiceComune">
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>disponenti2LuogoNascitaCodiceComune|disponenti2LuogoNascitaCodiceProvincia|disponenti2LuogoNascitaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti2LuogoNascitaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1LuogoResidenzaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoResidenzaCodiceNazione">
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1LuogoResidenzaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti1LuogoResidenzaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoResidenzaCodiceRegione">
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti2LuogoResidenzaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti1LuogoResidenzaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="disponenti1LuogoResidenzaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>disponenti1LuogoResidenzaCodiceComune|disponenti1LuogoResidenzaCodiceProvincia|disponenti1LuogoResidenzaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti1LuogoResidenzaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="disponenti2LuogoResidenzaCodiceComune">
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>disponenti2LuogoResidenzaCodiceComune|disponenti2LuogoResidenzaCodiceProvincia|disponenti2LuogoResidenzaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>disponenti2LuogoResidenzaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreCapResidenza">
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegexCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreCF">
+	  <regola codiceErrore="5555" descrizioneErrore="Struttura Codice Fiscale non coerente ai dati Anagrafici" nome="regolaVerificaCodiceFiscale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroDataNascita</key>
+                  <value>donatoreDataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5003" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaIntervalloLunghezza">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>minLunghezza</key>
+                  <value>16</value>
+               </entry>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>16</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreDataNascita">
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegexCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaObbligatorietaEtaDisponentiFiduciari"/>
+   </campo>
+   <campo nomecampo="donatoreLuogoNascitaCodiceNazione">
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreLuogoNascitaCodiceRegione">
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>donatoreLuogoNascitaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreLuogoNascitaCodiceComune">
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>donatoreLuogoNascitaCodiceComune|donatoreLuogoNascitaCodiceProvincia|donatoreLuogoNascitaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>donatoreLuogoNascitaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreLuogoResidenzaCodiceNazione">
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreLuogoResidenzaCodiceRegione">
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>donatoreLuogoResidenzaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="donatoreLuogoResidenzaCodiceComune">
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>donatoreLuogoResidenzaCodiceComune|donatoreLuogoResidenzaCodiceProvincia|donatoreLuogoResidenzaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>donatoreLuogoResidenzaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1CapResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2CapResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1ConsensoEmail">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>SI|NO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2ConsensoEmail">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5001" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>SI|NO</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1CF">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	  <regola codiceErrore="5555" descrizioneErrore="Struttura Codice Fiscale non coerente ai dati Anagrafici" nome="regolaVerificaCodiceFiscale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroDataNascita</key>
+                  <value>fiduciari1DataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5003" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaIntervalloLunghezza">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>minLunghezza</key>
+                  <value>16</value>
+               </entry>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>16</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2CF">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	  <regola codiceErrore="5555" descrizioneErrore="Struttura Codice Fiscale non coerente ai dati Anagrafici" nome="regolaVerificaCodiceFiscale">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroDataNascita</key>
+                  <value>fiduciari2DataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="5003" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaIntervalloLunghezza">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>minLunghezza</key>
+                  <value>16</value>
+               </entry>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>16</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1Cognome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2Cognome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1DataNascita">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2DataNascita">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Tipo dato errato o formato data errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1Email">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2Email">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1IndirizzoResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2IndirizzoResidenza">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1Nome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2Nome">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoNascitaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoNascitaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoNascitaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari1LuogoNascitaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoNascitaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari2LuogoNascitaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoNascitaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoNascitaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoNascitaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>fiduciari1LuogoNascitaCodiceComune|fiduciari1LuogoNascitaCodiceProvincia|fiduciari1LuogoNascitaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari1LuogoNascitaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoNascitaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>fiduciari2LuogoNascitaCodiceComune|fiduciari2LuogoNascitaCodiceProvincia|fiduciari2LuogoNascitaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari2LuogoNascitaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoResidenzaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoResidenzaCodiceNazione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Codice nazione non presente nel dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoResidenzaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari1LuogoResidenzaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoResidenzaCodiceRegione">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaCrossCampoRegioneNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+			   <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari2LuogoResidenzaCodiceNazione</value>
+               </entry>
+			   <entry>
+                  <key>parametroNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoResidenzaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoResidenzaCodiceProvincia">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+   <campo nomecampo="fiduciari1LuogoResidenzaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>fiduciari1LuogoResidenzaCodiceComune|fiduciari1LuogoResidenzaCodiceProvincia|fiduciari1LuogoResidenzaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari1LuogoResidenzaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="fiduciari2LuogoResidenzaCodiceComune">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5010" descrizioneErrore="Codice comune non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiNazione">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REG_PROV_COM</value>
+               </entry>
+               <entry>
+                  <key>separatore</key>
+                  <value>#</value>
+               </entry>
+               <entry>
+                  <key>listaCampiDaConcatenare</key>
+                  <value>fiduciari2LuogoResidenzaCodiceComune|fiduciari2LuogoResidenzaCodiceProvincia|fiduciari2LuogoResidenzaCodiceRegione</value>
+               </entry>
+               <entry>
+                  <key>codiceNazione</key>
+                  <value>fiduciari2LuogoResidenzaCodiceNazione</value>
+               </entry>
+               <entry>
+                  <key>parametroCodiceNazione</key>
+                  <value>IT</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="soggettoAlimentanteCap">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5006" descrizioneErrore="Formato del CAP errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>^[0-9]{5}$</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="soggettoAlimentanteRegioneSoggettoAlimentante">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5002" descrizioneErrore="Codice regione non presente nell'anagrafica di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DPM_REGIONI</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="soggettoAlimentanteCodiceSoggettoAlimentante">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5700" descrizioneErrore="Lunghezza diversa da quella aspettata" nome="regolaMaxLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>maxLunghezza</key>
+                  <value>6</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo="soggettoAlimentanteIndirizzo">
+      <regola codiceErrore="5555" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+   </campo>
+</flusso>

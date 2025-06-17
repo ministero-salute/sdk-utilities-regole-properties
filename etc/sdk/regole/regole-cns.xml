@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+
+	<campo nomecampo="codiceRegione">
+		<regola codiceErrore="B01" descrizioneErrore="Errore codice regione" nome="regolaCheckCampiInput">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>parametroInput</key>
+						<value>codiceRegioneInput</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B01" descrizioneErrore="Errore codice regione" nome="regolaDominioValoriAnagrafica">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_REGIONI</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+	
+	<campo nomecampo="codiceAziendaSanitaria">
+		<regola codiceErrore="XSD_1" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>\b[0-9]{6}\b</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="D01" descrizioneErrore="Errore di dominio codice AS" nome="regolaDominioValoriAnagraficaConcatenatiPeriodoAnno">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_ASL</value>
+					</entry>
+					<entry>
+						<key>separatore</key>
+						<value>#</value>
+					</entry>
+					<entry>
+						<key>listaCampiDaConcatenare</key>
+						<value>codiceRegione|codiceAziendaSanitaria</value>
+					</entry>
+					<entry>
+						<key>mese</key>
+						<value>meseDiConsegna</value>
+					</entry>
+					<entry>
+						<key>anno</key>
+						<value>annoDiConsegna</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>	
+	</campo>
+	
+	<campo nomecampo="codiceUnitaOperativa">
+		<regola codiceErrore="XSD_2" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>\b[0-9]{4}\b</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="D85" descrizioneErrore="Errore di dominio codice Unità Operativa" nome="regolaCodiceUnitaOperativa">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_COD_UNITA_OPER</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>	
+	
+	<campo nomecampo="tipoStrutturaUtilizzatrice">
+		<regola codiceErrore="XSD_3" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00|01|02|03|04|05|06</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+        <regola codiceErrore="B84" descrizioneErrore="Errore unità operativa" nome="regolaListaValoriAmmessiCondizionataCampoDiverso">
+           <parametri>
+              <parametriMap>
+                 <entry>
+                    <key>nomeCampoCondizionante</key>
+                    <value>codiceUnitaOperativa</value>
+                 </entry>
+                 <entry>
+                    <key>parametroCampoCondizionante</key>
+                    <value>0000</value>
+                 </entry>
+                 <entry>
+                    <key>listaValoriAmmessi</key>
+                    <value>01</value>
+                 </entry>
+              </parametriMap>
+           </parametri>
+        </regola>
+		<regola codiceErrore="B92" descrizioneErrore="Errore struttura" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>codiceStrutturaUtilizzatrice</value>
+					</entry>
+					<entry>
+						<key>parametroCampoCondizionante</key>
+						<value>00000000</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+	
+	<campo nomecampo="codiceStrutturaUtilizzatrice">
+		<regola codiceErrore="XSD_4" descrizioneErrore="Coerenza dominio valori" nome="regolaIntervalloLunghezza">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>minLunghezza</key>
+						<value>1</value>
+					</entry>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>8</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B92" descrizioneErrore="Errore struttura" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>tipoStrutturaUtilizzatrice</value>
+					</entry>
+					<entry>
+						<key>parametroCampoCondizionante</key>
+						<value>00</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00000000</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="D80" descrizioneErrore="Errore struttura utilizzatrice" nome="regolaDominioCampoDiversoValoreAnagrafica">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>valoreCondizionante</key>
+						<value>tipoStrutturaUtilizzatrice</value>
+					</entry>
+					<entry>
+						<key>parametroCondizionante</key>
+						<value>00</value>
+					</entry>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_STRUTTURE</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="annoDiConsegna">
+		<regola codiceErrore="XSD_5" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>\b[2][0][0-9]{2}\b</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="meseDiConsegna">
+		<regola codiceErrore="XSD_6" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>01|02|03|04|05|06|07|08|09|10|11|12</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B03" descrizioneErrore="Errore periodo di riferimento" nome="regolaDataCorrentePosterioreAnnoMeseRif">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>annoDiConsegna</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="tipoDispositivoMedico">
+		<regola codiceErrore="XSD_7" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>1|2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="identificativoDiIscrizioneInBancaDatiRepertorio">
+		<regola codiceErrore="XSD_8" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>\b[1-9]{1}[0-9]{0,12}\b</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="D81" descrizioneErrore="Errore numero repertorio Dispositivo di Classe" nome="regolaDominioCampoUgualeValoreAnagrafica">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipoDispositivoMedico</value>
+					</entry>
+					<entry>
+						<key>parametroCondizionante</key>
+						<value>1</value>
+					</entry>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_DISPOSITIVI</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="D83" descrizioneErrore="Errore numero repertorio Assemblato" nome="regolaDominioCampoUgualeValoreAnagrafica">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipoDispositivoMedico</value>
+					</entry>
+					<entry>
+						<key>parametroCondizionante</key>
+						<value>2</value>
+					</entry>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_CDM_ASSEMBLATI</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="destinazioneDiUtilizzo">
+		<regola codiceErrore="XSD_9" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00|01|02|03|04|05|0|1|2|3|4|5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B89" descrizioneErrore="Errore tipo destinazione utilizzo" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>tipoDestinazioneDiUtilizzo</value>
+					</entry>
+					<entry>
+						<key>parametroCampoCondizionante</key>
+						<value>I</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>0|1|2|3|4|5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B90" descrizioneErrore="Errore tipo destinazione utilizzo" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>tipoDestinazioneDiUtilizzo</value>
+					</entry>
+					<entry>
+						<key>parametroCampoCondizionante</key>
+						<value>D</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00|01|02|03|04|05</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="B91" descrizioneErrore="Errore tipo destinazione utilizzo" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCondizionante</key>
+						<value>tipoDestinazioneDiUtilizzo</value>
+					</entry>
+					<entry>
+						<key>parametroCampoCondizionante</key>
+						<value>P</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>00|01|02|03|04|05</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="quantitaDistribuita">
+		<regola codiceErrore="XSD_10" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^-{0,1}[0-9]{1,12}(\.[0-9]{1,2})$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="costoDacquisto">
+		<regola codiceErrore="XSD_11" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^-{0,1}[0-9]{1,8}(\.[0-9]{1,5})$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="tipoOperazione">
+		<regola codiceErrore="XSD_12" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V|C</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<campo nomecampo="tipoDestinazioneDiUtilizzo">
+		<regola codiceErrore="XSD_13" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|D|P</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+	
+</flusso>

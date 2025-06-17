@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+    <campo nomecampo="modalita">
+		<regola codiceErrore="1801" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1802" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>RE</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codRegione">
+		<regola codiceErrore="1921" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1922" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaDominioValoriAnagraficaConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONE</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1905" descrizioneErrore="Il codice regione non coincide con la regione inviante." nome="regolaCheckCampiInput">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>parametroInput</key>
+						<value>codiceRegioneInput</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "idAssistito">
+		<regola codiceErrore="1701" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1703" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>172</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "validitaCI">
+		<regola codiceErrore="1701" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1702" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>0|1</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "tipologiaCI">
+		<regola codiceErrore="1601" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1602" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>0|1|2|3|4|99</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "sesso">
+		<regola codiceErrore="1501" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1502" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>1|2|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "dataNascita">
+		<regola codiceErrore="1400" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-[0-9]{2}-[0-9]{2}$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1401" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1935" descrizioneErrore="Data nascita successiva alla Data di trasmissione" nome="regolaDataAntecedenteDataTrasmissioneCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>20</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1940" descrizioneErrore="Data nascita successiva alla data di decesso" nome="regolaDataAntecedenteCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>dataDecesso</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codiceComuneResidenza">
+		<regola codiceErrore="1301" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1303" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>6</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1945" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo2ConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_COMUNI_ISTAT</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1950" descrizioneErrore="Comune di Residenza incoerente con Stato Estero di Residenza" nome="regolaIncoerenzaCrossCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>valoreConfronto</key>
+						<value>999999</value>
+					</entry>
+					<entry>
+						<key>nomeCampoCoerente</key>
+						<value>statoEsteroResidenza</value>
+					</entry>
+					<entry>
+						<key>listaValoriIncoerenti</key>
+						<value>IT</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1955" descrizioneErrore="Comune di Residenza incoerente con Regione o ASL  di Residenza (solo per invii con modalità RE)" nome="regolaDominioValoriAnagraficaConcatenatiConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONI_PROVINCE_COMUNI_ASL</value>
+					</entry>
+					<entry>
+						<key>separatore</key>
+						<value>#</value>
+					</entry>
+					<entry>
+						<key>listaCampiDaConcatenare</key>
+						<value>codiceComuneResidenza|codiceRegioneResidenza|codiceAslResidenza</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codiceAslResidenza">
+		<regola codiceErrore="1970" descrizioneErrore="Asl di Residenza incoerente con Regione o Comune  di Residenza (solo per invii con modalità RE)" nome="regola1970"/>
+		<regola codiceErrore="1201" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1203" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>3</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1965" descrizioneErrore="Asl di Residenza incoerente con Stato Estero di Residenza" nome="regolaEsistenzaUguaglianzaCrossCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCoerente</key>
+						<value>statoEsteroResidenza</value>
+					</entry>
+					<entry>
+						<key>listaValoriCoerenti</key>
+						<value>IT</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1960" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONI_PROVINCE_COMUNI_ASL</value>
+					</entry>
+					<entry>
+						<key>separatore</key>
+						<value>#</value>
+					</entry>
+					<entry>
+						<key>listaCampiDaConcatenare</key>
+						<value>codiceComuneResidenza|codiceRegioneResidenza|codiceAslResidenza</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codiceRegioneResidenza">
+		<regola codiceErrore="1990" descrizioneErrore="Regione di Residenza incoerente con la modalità di trasmissione" nome="regola1990"/>
+		<regola codiceErrore="1101" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1103" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>3</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1980" descrizioneErrore="Asl di Residenza incoerente con Stato Estero di Residenza" nome="regolaEsistenzaUguaglianzaCrossCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoCoerente</key>
+						<value>statoEsteroResidenza</value>
+					</entry>
+					<entry>
+						<key>listaValoriCoerenti</key>
+						<value>IT</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1975" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaConcatenatiConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONI_PROVINCE_COMUNI_ASL</value>
+					</entry>
+					<entry>
+						<key>separatore</key>
+						<value>#</value>
+					</entry>
+					<entry>
+						<key>listaCampiDaConcatenare</key>
+						<value>codiceComuneResidenza|codiceRegioneResidenza|codiceAslResidenza</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1985" descrizioneErrore="Regione di Residenza incoerente con Comune o ASL  di Residenza" nome="regolaIncoerenzaRegioneComuneASLEstero">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONI_COMUNI</value>
+					</entry>
+					<entry>
+						<key>obbligatorio</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "statoEsteroResidenza">
+	 	<regola codiceErrore="2000" descrizioneErrore="Stato estero di residenza diverso da IT incoerente con Regione, comune e ASL di residenza" nome="regolaIncoerenzaStatoEsteroConComuneASL"/>
+		<regola codiceErrore="3001" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="3003" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1995" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaDominioValoriAnagraficaConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_ALPHA2</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2005" descrizioneErrore="Stato estero di residenza uguale a “IT” incoerente con Regione, comune e ASL di residenza" nome="regolaIncoerenzaStatoEsteroConComuneASL2"/>
+	</campo>
+
+    <campo nomecampo="dataTrasferimentoResidenza">
+	<regola codiceErrore="2010" descrizioneErrore="Data Trasferimento Residenza obbligatoria se modalita di tramissione è uguale a TR – Trasferimento in altra regione per cambio di residenza" nome="regolaObbligatorietaCondizionataValoreCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCondizionante</key>
+                  <value>modalita</value>
+               </entry>
+               <entry>
+                  <key>parametroCampoCondizionante</key>
+                  <value>TR</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+    </regola>
+	<regola codiceErrore="2020" descrizioneErrore="Data di trasferimento residenza antecedente alla data di nascita" nome="regolaDataPosterioreCondizionaleFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoValidatore</key>
+                  <value>dataNascita</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+	<regola codiceErrore="2030" descrizioneErrore="Data di trasferimento residenza incoerente con la modalità di trasmissione" nome="regolaEsistenzaDisuguaglianzaCrossCampo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoCoerente</key>
+                  <value>modalita</value>
+               </entry>
+               <entry>
+                  <key>listaValoriIncoerenti</key>
+                  <value>RE|MV</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+	  <regola codiceErrore="2025" descrizioneErrore="Data di trasferimento residenza successiva alla data di decesso" nome="regolaDataAntecedenteCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeCampoValidatore</key>
+                  <value>dataDecesso</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+	  <regola codiceErrore="6170" descrizioneErrore="Datatype errato" nome="regolaRegexCampoFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+   <campo nomecampo = "codiceComuneDomicilio"> 
+		<regola codiceErrore="2035" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaFacoltativo2ConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_COMUNI_ISTAT</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2040" descrizioneErrore="Comune di Domicilio incoerente con Comune o ASL  di Domicilio" nome="regolaCampoNotNullCondizionatoDaListaCampi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaCampi</key>
+						<value>codiceAslDomicilio|codiceRegioneDomicilio</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="1903" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>6</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codiceAslDomicilio">
+		<regola codiceErrore="2012" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>3</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<!-- <regola codiceErrore="2045" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaSplitFacoltativoConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_ASL</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola> -->
+		<regola codiceErrore="2050" descrizioneErrore="ASL di Domicilio incoerente con Comune o regione  di Domicilio" nome="regolaCampoNotNullCondizionatoDaListaCampi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaCampi</key>
+						<value>codiceComuneDomicilio|codiceRegioneDomicilio</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "codiceRegioneDomicilio">
+		<regola codiceErrore="2032" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>3</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2055" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONE</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+     	<regola codiceErrore="2060" descrizioneErrore="Regione di Domicilio incoerente con Comune o ASL  di Docmicilio" nome="regolaBR2060ConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_REGIONI_PROVINCE_COMUNI_ASL</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2065" descrizioneErrore="Dati di Domicilio incoerenti con i dati di Residenza" nome="regolaDisuguaglianzaListaCampi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaCampiDaConfrontare</key>
+						<value>codiceRegioneDomicilio|codiceComuneDomicilio|codiceAslDomicilio</value>
+					</entry>
+					<entry>
+						<key>listaCampiConfronto</key>
+						<value>codiceRegioneResidenza|codiceComuneResidenza|codiceAslResidenza</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "cittadinanza">
+		<regola codiceErrore="2041" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="2043" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2075" descrizioneErrore="Cittadinanza incongruente con la Tipologia del codice identificativo assistito " nome="regolaIncoerenzaCrossCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>valoreConfronto</key>
+						<value>IT</value>
+					</entry>
+					<entry>
+						<key>nomeCampoCoerente</key>
+						<value>tipologiaCI</value>
+					</entry>
+					<entry>
+						<key>listaValoriIncoerenti</key>
+						<value>1|2|3</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2070" descrizioneErrore="Codice non presente nel dominio di riferimento" nome="regolaDominioValoriAnagraficaConParametro">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_AVN_ALPHA2</value>
+					</entry>
+					<entry>
+						<key>modalitaRegola</key>
+						<value>Y</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+    <campo nomecampo = "dataDecesso">
+	 	<regola codiceErrore="2095" descrizioneErrore="La data di decesso deve essere compresa nel periodo di invio" nome="regolaBR2095"/>
+		<regola codiceErrore="2085" descrizioneErrore="In caso di flusso Residenti (RE) La data di decesso è antecedente alla data di nascita." nome="regolaDataAntecedenteCondizionataCampoFacoltativo"/>
+		<regola codiceErrore="2080" descrizioneErrore="In caso di flusso Residenti (RE) La data di decesso è successiva alla data di trasmissione." nome="regolaDataPosterioreCondizionataCampoFacoltativo"/>
+		<regola codiceErrore="3000" descrizioneErrore="Datatype errato" nome="regolaRegexCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-[0-9]{2}-[0-9]{2}$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="2090" descrizioneErrore="In caso di flusso Residenti (RE) La differenza tra data di nascita e data di decesso è superiore a 130 anni" nome="regolaDifferenzaDateSuperiore130Anni"/>
+	</campo>
+
+    <campo nomecampo = "tipoTrasmissioneAnagrafica">
+		<regola codiceErrore="1901.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="1902.2" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaListaValoriAmmessi">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|i|V|v|C|c|NM</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+</flusso>

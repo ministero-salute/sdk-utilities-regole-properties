@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+
+    <campo nomecampo="tipo">
+        <regola codiceErrore="XSD.3.1.1" descrizioneErrore="Mancata valorizzazione del campo obbligatorio" nome="regolaObbligatorieta"/>
+        <regola codiceErrore="XSD.3.1.2" descrizioneErrore="Tipo operazione non appartenente al dominio atteso (I,V,C)" nome="regolaListaValoriAmmessi">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>listaValoriAmmessi</key>
+                        <value>I|V|C</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="anno_erog">
+        <regola codiceErrore="XSD.3.2.1" descrizioneErrore="Mancata valorizzazione del campo obbligatorio" nome="regolaObbligatorieta"/>
+        <regola codiceErrore="XSD.3.2.2" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaIntervalloMinMaxInteger">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>2000</value>
+                    </entry>
+                </parametriMap>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>2099</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="reg_erog">
+        <regola codiceErrore="XSD.3.3.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+        <regola codiceErrore="XSD.3.3.2" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>listaValoriAmmessi</key>
+                        <value>010|020|030|041|042|050|060|070|080|090|100|110|120|130|140|150|160|170|180|190|200</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="as_erog">
+        <regola codiceErrore="XSD.3.4.1" descrizioneErrore="Mancata valorizzazione del campo obbligatorio" nome="regolaObbligatorieta"/>
+        <regola codiceErrore="XSD.3.4.2" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>regex</key>
+                        <value>^[0-9]{3}$</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+        <!--<regola codiceErrore="S.3.10.004.002" descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio" nome="regolaDominioValoriAnagraficaCampoCondizionanteEsternoCoppia">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>secondoCampoDaValidare</key>
+                        <value>reg_erog</value>
+                    </entry>
+                    <entry>
+                        <key>nomeTabella</key>
+                        <value>ANAG_SIAR_AZI</value>
+                    </entry>
+                    <entry>
+                        <key>campoCondizionante</key>
+                        <value>tipo</value>
+                    </entry>
+                    <entry>
+                        <key>parametroCondizionante</key>
+                        <value>I</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>-->
+    </campo>
+
+    <campo nomecampo="strut_erog">
+        <regola codiceErrore="XSD.3.5.1" descrizioneErrore="Mancata valorizzazione del campo obbligatorio" nome="regolaObbligatorieta"/>
+        <regola codiceErrore="XSD.3.5.2" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>regex</key>
+                        <value>^[a-zA-Z0-9]{6}$</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+        <!--<regola codiceErrore="S.3.10.005.002" descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio" nome="regolaDominioValoriAnagraficaCampoCondizionanteTripletta">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>secondoCampoDaValidare</key>
+                        <value>reg_erog</value>
+                    </entry>
+                    <entry>
+                        <key>terzoCampoDaValidare</key>
+                        <value>as_erog</value>
+                    </entry>
+                    <entry>
+                        <key>campoCondizionante</key>
+                        <value>tipo</value>
+                    </entry>
+                    <entry>
+                        <key>parametroCondizionante</key>
+                        <value>I</value>
+                    </entry>
+                    <entry>
+                        <key>nomeTabella</key>
+                        <value>ANAG_SIAR_STS_RIA</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>-->
+    </campo>
+
+    <campo nomecampo="ore_tot_mmgpls">
+        <regola codiceErrore="XSD.3.6.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_medspec">
+        <regola codiceErrore="XSD.3.7.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_inferm">
+        <regola codiceErrore="XSD.3.8.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_operss">
+        <regola codiceErrore="XSD.3.9.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_fisio">
+        <regola codiceErrore="XSD.3.10.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_logop">
+        <regola codiceErrore="XSD.3.11.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_terap_neuro">
+        <regola codiceErrore="XSD.3.12.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_tecn_riab_psico">
+        <regola codiceErrore="XSD.3.13.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_terap_occup">
+        <regola codiceErrore="XSD.3.14.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_psico">
+        <regola codiceErrore="XSD.3.15.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_assistsoc">
+        <regola codiceErrore="XSD.3.16.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_educprof">
+        <regola codiceErrore="XSD.3.17.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+
+    <campo nomecampo="ore_tot_altro">
+        <regola codiceErrore="XSD.3.18.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="RegolaIntervalloMinMaxIntegerDefaultValue">
+            <parametri>
+                <parametriMap>
+                    <entry>
+                        <key>parametroMin</key>
+                        <value>0</value>
+                    </entry>
+                    <entry>
+                        <key>parametroMax</key>
+                        <value>999999</value>
+                    </entry>
+                    <entry>
+                        <key>valoreDefault</key>
+                        <value>999999</value>
+                    </entry>
+                </parametriMap>
+            </parametri>
+        </regola>
+    </campo>
+    <regolemultirecord>
+        <regola codiceErrore="S.3.30.002.002" descrizioneErrore="Chiave del record presente nel medesimo invio (chiave duplicata)">
+            <query><![CDATA[select * from {{table}} orig
+             join ( select anno_erog, reg_erog, as_erog, strut_erog from {{table}} group by anno_erog, reg_erog, as_erog, strut_erog having count(1) > 1 ) reject
+             on (orig.anno_erog = reject.anno_erog and orig.reg_erog = reject.reg_erog and orig.as_erog = reject.as_erog and orig.strut_erog = reject.strut_erog )]]></query>
+        </regola>
+    </regolemultirecord>
+
+</flusso>

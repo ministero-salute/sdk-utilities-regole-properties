@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+
+<campo nomecampo="annoRiferimento">
+	<regola codiceErrore="3001" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3000" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[1-2][0-9]{3}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3009" descrizioneErrore="Il valore del campo Anno Riferimento e' diverso dal valore Anno Riferimento GAF" nome="regolaCheckCampiInput">
+	<parametri>
+		<parametriMap>
+		<entry>
+			<key>parametroInput</key>
+			<value>annoRiferimentoInput</value>
+		</entry>
+		</parametriMap>
+	</parametri>
+</regola>
+</campo>
+
+<campo nomecampo="codiceRegione">
+	<regola codiceErrore="3011" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3012" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>010|020|030|041|042|050|060|070|080|090|100|110|120|130|140|150|160|170|180|190|200</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3305" descrizioneErrore="Il codice regione non coincide con il MITTENTE" nome="regolaCheckCampiInput">
+	<parametri>
+		<parametriMap>
+		<entry>
+			<key>parametroInput</key>
+			<value>codiceRegioneInput</value>
+		</entry>
+		</parametriMap>
+	</parametri>
+</regola>
+</campo>
+
+<campo nomecampo="periodoRiferimento">
+	<regola codiceErrore="3010" descrizioneErrore="Il valore del campo Periodo Riferimento e' diverso dal valore Periodo Riferimento GAF" nome="regolaCheckCampiInput">
+	<parametri>
+		<parametriMap>
+		<entry>
+			<key>parametroInput</key>
+			<value>periodoRiferimentoInput</value>
+		</entry>
+		</parametriMap>
+	</parametri>
+	</regola>
+	<regola codiceErrore="3021" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3022" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>S1|S2</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="codiceAziendaSanitariaRiferimento">
+	<regola codiceErrore="3031" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3030" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[0-9]{3}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3310" descrizioneErrore="Il codice della ASL di riferimento non esiste nella relativa anagrafica" nome="regolaDominioValoriAnagraficaConcatenatiValoriDaEscludere">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeTabella</key>
+				  <value>ANAG_SISM_ASL</value>
+			   </entry>
+			   <entry>
+				  <key>separatore</key>
+				  <value>#</value>
+			   </entry>
+			   <entry>
+				  <key>listaCampiDaConcatenare</key>
+				  <value>annoRiferimento|codiceRegione|codiceAziendaSanitariaRiferimento</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="codiceDipartimentoSaluteMentale">
+	<regola codiceErrore="3041" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3040" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[a-zA-Z_0-9]{1,3}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3315" descrizioneErrore="Il codice DSM non esiste nella relativa anagrafica" nome="regolaDominioValoriAnagraficaSplitConParametro">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeTabella</key>
+				  <value>ANAG_SISM_DSM</value>
+			   </entry>
+			   <entry>
+				  <key>primoParametro</key>
+				  <value>annoRiferimento</value>
+			   </entry>
+			   <entry>
+				  <key>secondoParametro</key>
+				  <value>codiceRegione</value>
+			   </entry>	
+			   <entry>
+				  <key>terzoParametro</key>
+				  <value>codiceAziendaSanitariaRiferimento</value>
+			   </entry>		
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="idRecord">
+    <regola codiceErrore="3051" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+    <regola codiceErrore="3050" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>size</key>
+                  <value>88</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+    </regola>
+</campo>
+
+<campo nomecampo="cuni">
+	<regola codiceErrore="3061" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3060" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>size</key>
+				  <value>88</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="validitaCodiceIdentificativoAssistito">
+	<regola codiceErrore="3071" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3072" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>0|1</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="tipologiaCodiceIdentificativoAssistito">
+	<regola codiceErrore="3081" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3082" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>0|1|2|3|99</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="annoNascita">
+	<regola codiceErrore="3091" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3090" descrizioneErrore="Il codice DSM non esiste nella relativa anagrafica" nome="regolaRegex">
+		<parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[1-2][0-9]{3}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<!-- Controllo in stand-by, capire se fatto sul GAF o su campo DTO -->
+	<!-- <regola codiceErrore="3370" descrizioneErrore="Anno di nascita successivo all'anno di riferimento" nome="regolaMaggioranzaCrossCampoString">
+	</regola> -->
+	<regola codiceErrore="3941" descrizioneErrore="L’età dell’assisitito non è compresa nel range atteso" nome="regolaVerificaEtaString">
+	<parametri>
+            <parametriMap>
+               <entry>
+				  <key>campoDaValidare</key>
+                  <value>annoRiferimento</value>
+			   </entry>
+			   <entry>
+				  <key>etaMin</key>
+                  <value>18</value>
+			   </entry>
+			   <entry>
+				  <key>etaMax</key>
+                  <value>100</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="sesso">
+	  <regola codiceErrore="3101" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	  <regola codiceErrore="3102" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="cittadinanza">
+	<regola codiceErrore="3111" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3110" descrizioneErrore="Datatype errato in un campo obbligatorio" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[a-zA-Z]{2}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3345" descrizioneErrore="Cittadinanza non esiste nella relativa anagrafica" nome="regolaDominioValoriAnagrafica">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeTabella</key>
+				  <value>ANAG_SISM_ALPHA2</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="codiceRegioneResidenza">
+	<regola codiceErrore="3121" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3122" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>010|020|030|041|042|050|060|070|080|090|100|110|120|130|140|150|160|170|180|190|200|999|998|098</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="aslProvenienza">
+	<regola codiceErrore="3131" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3130" descrizioneErrore="Datatype errato " nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[0-9]{3}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3601" descrizioneErrore="ASL di residenza non valida" nome="regolaDominioValoriAnagraficaConcatenatiValoriDaEscludere">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeTabella</key>
+				  <value>ANAG_SISM_ASL</value>
+			   </entry>
+			   <entry>
+				  <key>separatore</key>
+				  <value>#</value>
+			   </entry>
+			   <entry>
+				  <key>listaCampiDaConcatenare</key>
+				  <value>annoRiferimento|codiceRegione|aslProvenienza</value>
+			   </entry>	
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3602" descrizioneErrore="Codice ASL di residenza dell'assistito incongruente rispetto al codice regione di residenza" nome="regolaUguaglianzaCrossCampoValore">
+	<parametri>
+			<parametriMap>
+			   <entry>
+				  <key>campoValidatore</key>
+				  <value>codiceRegioneResidenza</value>
+			   </entry>
+			   <entry>
+				  <key>parametroInput</key>
+				  <value>098</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="statoEsteroResidenza">
+	<regola codiceErrore="3132" descrizioneErrore="Datatype errato" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[a-zA-Z]{2}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="3375" descrizioneErrore="Stato estero di residenza non presente in anagrafica" nome="regolaDominioValoriAnagrafica">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeTabella</key>
+				  <value>ANAG_SISM_ALPHA2</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<!-- <regola codiceErrore="7366" descrizioneErrore="Stato estero di residenza non congruente con la regione di residenza" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>098|999</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola> -->
+</campo>
+
+<campo nomecampo="statoCivile">
+	<regola codiceErrore="3141" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3142" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|3|4|5|6|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="collocazioneSocioAmbientale">
+	<regola codiceErrore="3151" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3152" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|3|4|5|6|7|8|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="titoloStudio">
+	<regola codiceErrore="3161" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3162" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|3|4|5|6|7|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="codiceProfessionale">
+	<regola codiceErrore="3171" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3172" descrizioneErrore="Non appartenenza alla tabella di riferimento per un campo obbligatorio" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|99</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+
+<campo nomecampo="tipoOperazioneAnagrafica">
+	<regola codiceErrore="3181" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+	<regola codiceErrore="3182" descrizioneErrore="Tipo operazione non appartenente al dominio atteso (I,V,C)" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>I|V|C</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+</campo>
+</flusso>

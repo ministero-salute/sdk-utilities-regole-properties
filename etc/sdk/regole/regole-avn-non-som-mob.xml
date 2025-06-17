@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+   <campo nomecampo="tipoTrasmissione">
+      <regola codiceErrore="1901" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="1902" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>i|I|V|v|c|C|NM</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+   <campo nomecampo="codRegione">
+      <regola codiceErrore="1921" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="1922" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaDominioValoriAnagraficaConParametro">
+         <parametri>
+            <parametriMap>
+                <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_AVN_REGIONE</value>
+                </entry>
+				<entry>
+					<key>modalitaRegola</key>
+					<value>D</value>
+				</entry>
+				<entry>
+					<key>dataRiferimento</key>
+					<value>dataNonEffettuazione</value>
+				</entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="1905" descrizioneErrore="Il codice regione non coincide con la regione inviante" nome="regolaCheckCampiInput">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>parametroInput</key>
+                  <value>codiceRegioneInput</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo> 
+
+   <campo nomecampo="codIdAssistito">
+      <regola codiceErrore="1701" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="1703" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>size</key>
+                  <value>172</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+   <campo nomecampo="modalita">
+      <regola codiceErrore="1801" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="1802" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>TR|MV</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="1803" descrizioneErrore="Modalità non coerente con il flusso inviato" nome="regolaListaValoriAmmessi">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>listaValoriAmmessi</key>
+                  <value>TR|MV</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+   <campo nomecampo="codiceAntigene">
+      <regola codiceErrore="6141" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="6140" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>size</key>
+                  <value>2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="4100" descrizioneErrore="Antigene non valorizzato in modo corretto" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>\b[0-9]{2}\b</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+   <campo nomecampo="dose">
+      <regola codiceErrore="6051" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="6050" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>\b[0-9]{1,2}\b</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+ <campo nomecampo="motivazione">
+      <regola codiceErrore="2703" descrizioneErrore="Lunghezza diversa da quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>size</key>
+                  <value>2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+      <regola codiceErrore="6141" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="5000" descrizioneErrore="Motivazione non presente nelle anagrafiche di riferimento" nome="regolaDominioValoriAnagraficaConParametro">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_AVN_MOTIVI_ESCLUSIONE</value>
+               </entry>
+				<entry>
+					<key>modalitaRegola</key>
+					<value>D</value>
+				</entry>
+				<entry>
+					<key>dataRiferimento</key>
+					<value>dataNonEffettuazione</value>
+				</entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+   <campo nomecampo="dataNonEffettuazione">
+      <regola codiceErrore="8012" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+      <regola codiceErrore="8013" descrizioneErrore="Tipo di dato errato o formato data errato" nome="regolaRegex">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>regex</key>
+                  <value>([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>
+
+</flusso>
+

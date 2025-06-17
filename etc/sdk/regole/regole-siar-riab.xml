@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+	<!-- MULTIREC -> DA TESTARE -->
+	<!--
+        <regolemultirecord>
+            <regola codiceErrore="S.2.30.002.002" descrizioneErrore="Chiave del record presente nel medesimo invio (chiave duplicata)" nome="regolaDeleteNotValidRecords">
+                    <query><![CDATA[
+                        SELECT *
+                        FROM {{table}} orig
+                        join
+                        (
+                            select reg_erog, as_erog, strut_erog, data_pic, id_rec, data_tratt_ini, data_valut_finale, data_sosp_ini, data_conclus
+                            FROM {{table}}
+                            group by reg_erog, as_erog, strut_erog, data_pic, id_rec, data_tratt_ini, data_valut_finale, data_sosp_ini, data_conclus
+                            having count(1) > 1
+                        )multi
+
+                        on (
+                                orig.reg_erog = multi.reg_erog AND
+                                orig.as_erog = multi.as_erog AND
+                                orig.strut_erog = multi.strut_erog AND
+                                orig.data_pic = multi.data_pic AND
+                                orig.id_rec = multi.id_rec AND
+                                orig.data_tratt_ini = multi.data_tratt_ini AND
+                                orig.data_valut_finale = multi.data_valut_finale AND
+                                orig.data_sosp_ini = multi.data_sosp_ini AND
+                                orig.data_conclus = multi.data_conclus
+                            )
+                        ]]>
+                    </query>
+                </regola>
+        </regolemultirecord>
+    -->
+
+	<!--Tipo-->
+	<!--tipo - tipoTrasmissione-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="tipo">
+		<regola codiceErrore="XSD.2.1.1" descrizioneErrore="Tipo operazione non appartenente al dominio atteso (I,V,C)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>I|V|C</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Regione di erogazione-->
+	<!--reg_erog-->
+	<!--
+	CHECK_DOMAIN				OK
+	CHECK_MULTIREC_UNIQUE		OK
+	-->
+	<campo nomecampo="reg_erog">
+		<regola codiceErrore="XSD.2.2.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>010|020|030|041|042|050|060|070|080|090|100|110|120|130|140|150|160|170|180|190|200</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Azienda sanitaria di erogazione-->
+	<!--as_erog - codASL-->
+	<!--
+	CHECK_LENGHT			OK
+	CHECK_ANAG				DA TESTARE
+	CHECK_MANDATORY			OK
+	CHECK_TYPE_ALPHANUM		OK
+	CHECK_MULTIREC_UNIQUE	OK
+	 -->
+	<campo nomecampo="as_erog">
+		<regola codiceErrore="XSD.2.3.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.3.3" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[0-9]+$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.3.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[0-9]{0,3}</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<!--
+        Id anagrafe: ANAG_SIAR_AZI
+        inviare COD_REG_RES_ASS e COD_ASL_RES_ASS concatenati senza separatore
+        utilizzare solo annoRiferimento pe il check range validità
+        -->
+		<regola codiceErrore="S.2.10.003.002"
+				descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio" nome="regolaDominioValoriAnagraficaCampoCondizionanteCoppia">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>secondoCampoDaValidare</key>
+						<value>reg_erog</value>
+					</entry>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_SIAR_AZI</value>
+					</entry>
+					<entry>
+						<key>parametroCondizionante</key>
+						<value>I</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+
+	</campo>
+
+	<!--Struttura erogatrice -->
+	<!--strut_erog-->
+	<!--
+	CHECK_LENGHT				OK
+	CHECK_MANDATORY 			OK
+	CHECK_TYPE_INTEGER 			OK
+	CHECK_ANAG					DA TESTARE
+	CHECK_MULTIREC_UNIQUE		OK
+	 -->
+	<campo nomecampo="strut_erog">
+		<regola codiceErrore="XSD.2.4.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.4.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>6</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.4.3" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^\d+$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<!--
+        Id anagrafe: ANAG_SIAR_AZI
+        per irecord con TIP_TRS = 'I' la coppia COD_REG_ERG + COD_ASL_ERG non è presente nelle tabelle SHR_DIM_STS, SHR_DIM_RIA
+        NB: la strut_erog non viene utilizzata
+        -->
+		<!--
+                <regola codiceErrore="S.2.10.004.002" descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio" nome="regolaDominioValoriAnagraficaCampoCondizionanteTriplettaAlter">
+                    <parametri>
+                        <parametriMap>
+                            <entry>
+                                <key>nomeTabella</key>
+                                <value>ANAG_SIAR_AZI</value>
+                            </entry>
+                            <entry>
+                                <key>secondoCampoDaValidare</key>
+                                <value>reg_erog</value>
+                            </entry>
+                            <entry>
+                                <key>terzoCampoDaValidare</key>
+                                <value>as_erog</value>
+                            </entry>
+                            <entry>
+                                <key>campoCondizionante</key>
+                                <value>tipo</value>
+                            </entry>
+                            <entry>
+                                <key>parametroCondizionante</key>
+                                <value>I</value>
+                            </entry>
+                        </parametriMap>
+                    </parametri>
+                </regola>
+        -->
+	</campo>
+
+	<!--Data apertura PIC-->
+	<!--data_pic-->
+	<!--
+	CHECK_TYPE_DATE 		OK
+	CHECK_MANDATORY			OK
+	CHECK_MULTIREC_UNIQUE	OK
+	 -->
+	<campo nomecampo="data_pic">
+		<regola codiceErrore="XSD.2.5.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.5.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Id Record-->
+	<!--id_rec-->
+	<!--
+	CHECK_LENGHT			OK
+	CHECK_MANDATORY 		OK
+	CHECK_MULTIREC_UNIQUE	OK
+	 -->
+	<campo nomecampo="id_rec">
+		<regola codiceErrore="XSD.2.6.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.6.2" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaLunghezzaCampoObbligatorio">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>size</key>
+						<value>88</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data inizio trattamento -->
+	<!--data_tratt_ini-->
+	<!--
+	CHECK_TYPE_DATE			OK
+	CHECK_MANDATORY			OK
+	CHECK_BEFORE_PIC		OK
+	CHECK_MULTIREC_UNIQUE	OK
+	 -->
+	<campo nomecampo="data_tratt_ini">
+		<regola codiceErrore="XSD.2.7.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.7.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.007.009" descrizioneErrore="Data precedente alla data presa in carico" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_pic</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data fine trattamento-->
+	<!--data_tratt_fine-->
+	<!--
+	CHECK_TYPE_DATE			OK
+	CHECK_START_END			OK
+	CHECK_BEFORE_PIC		OK
+	CHECK_AFTER_END			OK
+	-->
+	<campo nomecampo="data_tratt_fine">
+		<regola codiceErrore="XSD.2.8.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.008.003" descrizioneErrore="Data antecedente alla data di Inizio Trattamento" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_tratt_ini</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>true</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.008.009" descrizioneErrore="Data precedente alla data presa in carico" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_pic</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Durata complessiva del trattamento-->
+	<!--durata_tratt_tot-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="durata_tratt_tot">
+		<regola codiceErrore="XSD.2.9.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1-999)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^(([1-9]{0,1})|([1-9]{1}[0-9]{0,1})|([1-9]{1}[0-9]{1}[0-9]{0,1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Durata media giornaliera del trattamento-->
+	<!--durata_tratt_gg-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="durata_tratt_gg">
+		<regola codiceErrore="XSD.2.10.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (0,5-24)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>([0-2]{1}[0-3]{0,1}.[5]{0,1})|([24])</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Eventuali trattamenti socio-riabilitativi-->
+	<!--tratt_socioriab-->
+	<!--
+	CHECK_DOMAIN					OK
+	CHECK_TRATTAMENTI_SUPPORTO		OK
+	-->
+	<campo nomecampo="tratt_socioriab">
+		<regola codiceErrore="XSD.2.11.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>1|2|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.50.011.001" descrizioneErrore="Errata valorizzazione di un campo obbligatorio e condizionato" nome="regolaObbligatorietaCondizionataDaDoppiaListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>valorePrefissato</key>
+						<value>2</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante1</key>
+						<value>supp_soc</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi1</key>
+						<value>1|2</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante2</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi2</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+
+	<!--Data rivalutazione / valutazione finale-->
+	<!--data_valut_finale-->
+	<!--
+	CHECK_MANDATORY				OK
+	CHECK_TYPE_DATE				OK
+	CHECK_MULTIREC_UNIQUE		OK
+	-->
+	<campo nomecampo="data_valut_finale">
+		<regola codiceErrore="XSD.2.12.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.12.2" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Motivo della valutazione-->
+	<!--motivo_valut-->
+	<!--
+	CHECK_MANDATORY		OK
+	CHECK_DOMAIN		OK
+	-->
+	<campo nomecampo="motivo_valut">
+		<regola codiceErrore="XSD.2.13.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.13.2" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^1|2$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Conferma valutazione precedente-->
+	<!--conf_valut_prec-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="conf_valut_prec">
+		<regola codiceErrore="XSD.2.14.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>1|2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Patologia principale-->
+	<!--pat_princ-->
+	<!--
+	CHECK_MANDATORY			OK
+	CHECK_LENGHT			OK
+	CHECK_ANAG				DA TESTARE
+	-->
+	<campo nomecampo="pat_princ">
+		<regola codiceErrore="A.2.50.015.001" descrizioneErrore="il campo è stato valorizzanto nonostante il campo conf_valut_prec=1" nome="regolaCampoNullPerValoriAltroCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>conf_valut_prec</value>
+					</entry>
+					<entry>
+						<key>valoriCondizionanti</key>
+						<value>1</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.50.015.001" descrizioneErrore="il campo non è stato valorizza nonostante il campo conf_valut_prec=2" nome="regolaCampoNotNullPerValoriAltroCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>conf_valut_prec</value>
+					</entry>
+					<entry>
+						<key>valoriCondizionanti</key>
+						<value>2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.15.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorietaCondizionataDaListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.15.2" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>6</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<!--
+        id anagrafica: ANAG_SIAR_DIA
+        inviare COD_PAT_PRI_ASS
+        no check range validità
+        -->
+
+		<regola codiceErrore="S.2.10.015.002" descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio"  nome="regolaDominioValoriAnagraficaCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_SIAR_DIA</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+
+	</campo>
+
+	<!--Patologia concomitante-->
+	<!--pat_conc-->
+	<!--
+	CHECK_MANDATORY		OK
+	CHECK_LENGHT		OK
+	CHECK_ANAG			DA TESTARE
+	-->
+	<campo nomecampo="pat_conc">
+		<regola codiceErrore="A.2.50.016.001" descrizioneErrore="il campo è stato valorizzanto nonostante il campo conf_valut_prec=2" nome="regolaCampoNullPerValoriAltroCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>conf_valut_prec</value>
+					</entry>
+					<entry>
+						<key>valoriCondizionanti</key>
+						<value>2</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.50.016.001" descrizioneErrore="il campo non è stato valorizza nonostante il campo conf_valut_prec=1" nome="regolaCampoNotNullPerValoriAltroCampo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>conf_valut_prec</value>
+					</entry>
+					<entry>
+						<key>valoriCondizionanti</key>
+						<value>1</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.16.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorietaCondizionataDaListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="XSD.2.16.2" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>6</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+
+		<!--
+        id anagrafica: ANAG_SIAR_DIA
+        inviare COD_PAT_CON_ASS
+        no check range validità
+        -->
+
+		<regola codiceErrore="S.2.10.016.002" descrizioneErrore="Valore non appartenente alla tabella di riferimento per un campo obbligatorio"  nome="regolaDominioValoriAnagraficaCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeTabella</key>
+						<value>ANAG_SIAR_DIA</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+
+	</campo>
+
+	<!--Livello di Autonomia-->
+	<!--liv_auton-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="liv_auton">
+		<regola codiceErrore="XSD.2.17.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Grado mobilità-->
+	<!--grado_mob-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="grado_mob">
+		<regola codiceErrore="XSD.2.18.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,4,5,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,5]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Disturbi cognitivi-->
+	<!--dist_cogn-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="dist_cogn">
+		<regola codiceErrore="XSD.2.19.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Disturbi comportamentali-->
+	<!--dist_comp-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="dist_comp">
+		<regola codiceErrore="XSD.2.20.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Comunicazione-->
+	<!--comunic-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="comunic">
+		<regola codiceErrore="XSD.2.21.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Area Sensoriale-->
+	<!--area_sens-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="area_sens">
+		<regola codiceErrore="XSD.2.22.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Bisogni internistico- assistenziali-->
+	<!--bis_intern-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="bis_intern">
+		<regola codiceErrore="XSD.2.23.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,4,5,6,7,8,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,9]</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Stabilità clinica-->
+	<!--stab_clin-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="stab_clin">
+		<regola codiceErrore="XSD.2.24.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,4,5,6,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,6]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Presenza di un caregiver-->
+	<!--pres_careg-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="pres_careg">
+		<regola codiceErrore="XSD.2.25.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2)" nome="regolaRegexCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,2]</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Supporto sociale-->
+	<!--supp_soc-->
+	<!--
+	CHECK_DOMAIN					OK
+	CHECK_SUPPORTO_TRATTAMENTI		OK
+	-->
+	<campo nomecampo="supp_soc">
+		<regola codiceErrore="XSD.2.26.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,9)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]|9</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.50.026.001" descrizioneErrore="Errata valorizzazione di un campo obbligatorio e condizionato" nome="regolaObbligatorietaCondizionataDaListaValoriCampoPrefissato">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>valorePrefissato</key>
+						<value>2</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tratt_socioriab</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>1|2</value>
+					</entry>
+					<entry>
+						<key>controlloInverso</key>
+						<value>true</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Utilizzo di dispositivi/protesi/ortesi-->
+	<!--util_dpo-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="util_dpo">
+		<regola codiceErrore="XSD.2.27.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2)" nome="regolaRegexCampoFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,2]</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 1-->
+	<!--esito_ril_disab1-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab1">
+		<regola codiceErrore="XSD.2.28.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 2-->
+	<!--esito_ril_disab2-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab2">
+		<regola codiceErrore="XSD.2.29.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 3-->
+	<!--esito_ril_disab3-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab3">
+		<regola codiceErrore="XSD.2.30.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 4-->
+	<!--esito_ril_disab4-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab4">
+		<regola codiceErrore="XSD.2.31.1"  descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 5-->
+	<!--esito_ril_disab5-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab5">
+		<regola codiceErrore="XSD.2.32.1"  descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Esito rilevazione della disabilità in uscita - 6-->
+	<!--esito_ril_disab6-->
+	<!--CHECK_LENGHT-->
+	<campo nomecampo="esito_ril_disab6">
+		<regola codiceErrore="XSD.2.33.1" descrizioneErrore="Lunghezza non conforme a quella attesa" nome="regolaMaxLunghezzaFacoltativo">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>maxLunghezza</key>
+						<value>5</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data di inizio sospensione-->
+	<!--data_sosp_ini-->
+	<!--
+	CHECK_MANDATORY				OK
+	CHECK_TYPE_DATE				OK
+	CHECK_BEFORE_PIC			OK
+	CHECK_MULTIREC_UNIQUE		OK
+	-->
+	<campo nomecampo="data_sosp_ini">
+		<regola codiceErrore="XSD.2.34.1" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.34.2" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.034.009" descrizioneErrore="Data precedente alla data presa in carico" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_pic</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data di fine sospensione-->
+	<!--data_sosp_fine-->
+	<!--
+	CHECK_START_END			OK
+	CHECK_TYPE_DATE			OK
+	CHECK_MANDATORY			OK
+	-->
+	<campo nomecampo="data_sosp_fine">
+		<regola codiceErrore="XSD.2.35.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.35.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.035.008" descrizioneErrore="Data precedente alla data inizio sospensione" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_sosp_ini</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Motivazione della sospensione-->
+	<!--motivo_sosp-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="motivo_sosp">
+		<regola codiceErrore="XSD.2.36.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>[1,3]</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data riunione finale di equipe-->
+	<!--data_riun_finale-->
+	<!--
+	CHECK_TYPE_DATE		OK
+	CHECK_BEFORE_PIC	OK
+	CHECK_MANDATORY		OK
+	CHECK_AFTER_END		OK
+	-->
+	<campo nomecampo="data_riun_finale">
+		<regola codiceErrore="XSD.2.37.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.37.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.037.009" descrizioneErrore="Data precedente alla data presa in carico" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_pic</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.037.010" descrizioneErrore="Data successiva alla data di conclusione" nome="regolaDataAntecedenteCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_conclus</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Data di conclusione-->
+	<!--data_conclus-->
+	<!--
+	CHECK_TYPE_DATE				OK
+	CHECK_BEFORE_PIC			OK
+	CHECK_MANDATORY				OK
+	CHECK_MULTIREC_UNIQUE		OK
+	-->
+	<campo nomecampo="data_conclus">
+		<regola codiceErrore="XSD.2.38.2" descrizioneErrore="Mancata valorizzazione di un campo obbligatorio" nome="regolaObbligatorieta"/>
+		<regola codiceErrore="XSD.2.38.1" descrizioneErrore="Datatype errato" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^[1-2][0-9]{3}-(([0]{1}[1-9]{1})|[1]{1}[0-2]{1})-(([0]{1}[1-9]{1})|([1,2]{1}[0-9]{1})|([3]{1}[0,1]{1}))$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+		<regola codiceErrore="S.2.40.038.009" descrizioneErrore="Data precedente alla data presa in carico" nome="regolaDataPosterioreCampoCondizionanteListaValori">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>nomeCampoValidatore</key>
+						<value>data_pic</value>
+					</entry>
+					<entry>
+						<key>controlloValiditaEntrambeDate</key>
+						<value>false</value>
+					</entry>
+					<entry>
+						<key>campoCondizionante</key>
+						<value>tipo</value>
+					</entry>
+					<entry>
+						<key>listaValoriAmmessi</key>
+						<value>I|V</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+
+	<!--Modalità di conclusione-->
+	<!--mod_conclus-->
+	<!--CHECK_DOMAIN-->
+	<campo nomecampo="mod_conclus">
+		<regola codiceErrore="XSD.2.39.1" descrizioneErrore="Non appartenenza al dominio di riferimento per un campo obbligatorio (1,2,3,4,5,6,7,8,9,10,97,98)" nome="regolaRegex">
+			<parametri>
+				<parametriMap>
+					<entry>
+						<key>regex</key>
+						<value>^(([1-9]{0,1})|10|97|98)$</value>
+					</entry>
+				</parametriMap>
+			</parametri>
+		</regola>
+	</campo>
+</flusso>

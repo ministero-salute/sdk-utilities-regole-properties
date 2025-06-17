@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flusso>
+   <campo nomecampo="regioneErogante">
+	<regola codiceErrore="B01" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaCheckCampiInput">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>parametroInput</key>
+					<value>codiceRegioneInput</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="B01" descrizioneErrore="Non appartenenza al dominio di riferimento" nome="regolaDominioValoriAnagrafica">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DIR_REGIONI</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola> 	
+	 <regola codiceErrore="XSD_1" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{3}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="codiceFarmaco">
+   <regola codiceErrore="D03" descrizioneErrore="Errore di dominio codice medicinale" nome="regolaDominioCampoUgualeValoreAnagraficaMeseAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>1</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_MEDICINALI</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>	
+	<regola codiceErrore="B11" descrizioneErrore="Errore codice medicinale" nome="regolaObbligatorietaCondizionataDaListaValori">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>1|4|5|6</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>	
+	<regola codiceErrore="B14" descrizioneErrore="Errore codice medicinale" nome="regolaObbligatorietaCondizionataDaListaValori">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>2|3</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>  
+	<regola codiceErrore="XSD_32" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9a-zA-Z]{1,9}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D33" descrizioneErrore="Errore codice tipo esenzione" nome="regolaDominioCampoUgualeValoreAnagraficaMeseAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>2</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_ATC_FARMACI</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D33" descrizioneErrore="Errore codice tipo esenzione" nome="regolaDominioCampoUgualeValoreAnagraficaMeseAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>3</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_ATC_FARMACI</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D33" descrizioneErrore="Errore codice tipo esenzione" nome="regolaDominioCampoUgualeValoreAnagrafica">
+        <parametri>
+            <parametriMap>
+                <entry>
+                    <key>campoCondizionante</key>
+                    <value>tipoFarmaco</value>
+                </entry>
+                <entry>
+                    <key>parametroCondizionante</key>
+                    <value>6</value>
+                </entry>
+                <entry>
+                    <key>nomeTabella</key>
+                    <value>ANAG_DIR_COD_ATC_06</value>
+                </entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="D33" descrizioneErrore="Errore codice tipo esenzione" nome="regolaUguaglianzaValoreCrossCampoFacoltativo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoDipendente</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>valoreDipendente</key>
+					<value>4</value>
+				</entry>
+				<entry>
+					<key>valoreCampo</key>
+					<value>V03AN01</value>
+				</entry>
+			
+			</parametriMap>
+		</parametri>
+	</regola>
+		<regola codiceErrore="D33" descrizioneErrore="Errore codice tipo esenzione" nome="regolaUguaglianzaValoreCrossCampoFacoltativo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoDipendente</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>valoreDipendente</key>
+					<value>5</value>
+				</entry>
+				<entry>
+					<key>valoreCampo</key>
+					<value>V03AN01</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="tipoErogatore">    
+	<regola codiceErrore="XSD_5" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D21" descrizioneErrore="Errore tipo erogatore" nome="regolaListaValoriAmmessiCampoFacoltativo">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|04|05|06</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="B44" descrizioneErrore="Errore Tipo Erogatore" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoCanale</value>
+				</entry>
+				<entry>
+					<key>parametroCampoCondizionante</key>
+					<value>R</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|06</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="dataPrescrizione">	
+	<regola codiceErrore="B23" descrizioneErrore="Errore data prescrizione" nome="regolaDataAntecedenteOUguale">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoValidatore</key>
+					<value>dataErogazione</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>	
+	<regola codiceErrore="XSD_27" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[0-9]{4}-[0-9]{2}-[0-9]{2}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="tipoStrutturaErogante">	
+	<regola codiceErrore="XSD_6" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="B36" descrizioneErrore="Errore tipo struttura erogante" nome="regolaObbligatorietaNullCondizionataValoreDiversoCampo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>parametroCampoCondizionante</key>
+					<value>02</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>	
+	<regola codiceErrore="D36" descrizioneErrore="Errore tipo struttura erogante" nome="regolaListaValoriAmmessiCondizionataCampoUguale">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>parametroCampoCondizionante</key>
+					<value>02</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|04|05</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="tipoContatto">	
+	<regola codiceErrore="D16" descrizioneErrore="Errore codice tipo contatto" nome="regolaObbligatorietaCondizionataCampo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>idContatto</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D26" descrizioneErrore="Errore codice tipo contatto" nome="regolaListaValoriAmmessi">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>1|2</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="XSD_22" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="idContatto">	
+	<regola codiceErrore="B41" descrizioneErrore="Errore Costo di Acquisto" nome="regolaStessoSegno"/>
+	<regola codiceErrore="D07" descrizioneErrore="Errore codice contatto" nome="regolaNoImplicitoNoEsplicitoMaggioreZero"/>
+	<regola codiceErrore="D16" descrizioneErrore="Errore codice tipo contatto" nome="regolaObbligatorietaCondizionataCampo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoContatto</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="XSD_23" descrizioneErrore="Coerenza dimensionale" nome="regolaMaxLunghezzaCampoObbligatorio">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>maxLunghezza</key>
+					<value>20</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="codiceStrutturaErogante">   
+	<regola codiceErrore="XSD_7" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>[0-9a-zA-Z\-]{1,8}</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D90" descrizioneErrore="Errore di dominio Struttura Erogante" nome="regolaDominioCampoUgualeValoreAnagraficaMeseAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>06</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_FLS11</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D40" descrizioneErrore="Errore struttura erogante" nome="regolaDominioValoriAnagraficaSplitFacoltativoListaValori">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|04|05|06</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_STRUTT_EROGANTI</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="B43" descrizioneErrore="Errore struttura erogante" nome="regolaB43">
+        <parametri>
+			<parametriMap>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|06</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_STRUTT_EROG_R</value>
+				</entry>
+			</parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="D20" descrizioneErrore="Errore struttura erogante" nome="regolaDominioValoriAnagraficaSplitFacoltativoListaValori">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>tipoErogatore</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|04|05|06</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_STRUTT_EROGANTI</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="aslAssistito">  
+	<regola codiceErrore="XSD_13" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{6}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+    <regola codiceErrore="D30" descrizioneErrore="Errore ASL di residenza dell'assistito" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DIR_FLS11</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+    <regola codiceErrore="B28" descrizioneErrore="Associazione Stato Estero - ASL assistito errata." nome="regolaAlmenoUnoObbligatori0NoImplicitoNoEsplicito"/>
+   </campo>  	
+   <campo nomecampo="statoEsteroDiResidenza">  
+	<regola codiceErrore="XSD_15" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[a-zA-Z]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+    <regola codiceErrore="D31" descrizioneErrore="Errore stato estero dell'assistito" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DIR_NAZIONI_ALPHA2</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+    </regola>
+	<regola codiceErrore="B38" descrizioneErrore="Associazione Stato Estero - ASL assistito errata" nome="regolaSoloUnCampoValorizzato">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>campoCondizionante</key>
+				  <value>aslAssistito</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>  
+   <campo nomecampo="tipoFarmaco">
+	<regola codiceErrore="D32" descrizioneErrore="Errore codice tipo medicinale" nome="regolaListaValoriAmmessi">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>1|2|3|4|5|6</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>	
+	<regola codiceErrore="XSD_31" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>1|2|3|4|5|6</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+   </campo>
+   <campo nomecampo="codicePrescrittore">   
+	<regola codiceErrore="D17" descrizioneErrore="Valorizzazione campo errato" nome="regolaObbligatorietaNullCondizionataValoreCampo">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoPrescrittore</value>
+				</entry>
+				<entry>
+					<key>parametroCampoCondizionante</key>
+					<value>Z</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>  
+	<regola codiceErrore="XSD_29" descrizioneErrore="Coerenza dimensionale" nome="regolaLunghezzaCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>size</key>
+				  <value>16</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>	
+   <campo nomecampo="targatura">   
+	<regola codiceErrore="D41" descrizioneErrore="Errore Codice Targatura" nome="regolaListaValoriAmmessiCondizionataListaValori">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>tipoFarmaco</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessiCampoCondizionante</key>
+					<value>2|3|4|5|6</value>
+				</entry>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>0|000000000|</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>  
+	<regola codiceErrore="B100" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>[0]{1}|[0-9]{9}[0-9AX]{0,1}</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>	
+	<regola codiceErrore="B13" descrizioneErrore="Errore Quantità" nome="regolaErroreQuantitaDiretta">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>dividendo</key>
+					<value>quantita</value>
+				</entry>
+				<entry>
+					<key>divisore</key>
+					<value>fattoreDiConversione</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="B101" descrizioneErrore="Errore check-digit della targatura" nome="regolaCheckDigitTargatura"/>
+   </campo>
+   <campo nomecampo="codiceEsenzione">
+   <regola codiceErrore="D22" descrizioneErrore="Errore Codice esenzione" nome="regolaDominioValoriAnagraficaFacoltativo">
+         <parametri>
+            <parametriMap>
+               <entry>
+                  <key>nomeTabella</key>
+                  <value>ANAG_DIR_COD_ESENZIONE</value>
+               </entry>
+            </parametriMap>
+         </parametri>
+      </regola>
+   </campo>  
+   <campo nomecampo="annoDiRiferimento">   
+	<regola codiceErrore="XSD_2" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[2][0][0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+<!--	<regola codiceErrore="B02" descrizioneErrore="Errore periodo di riferimento" nome="regolaObbligatorietaPeriodoDiRiferimentoDiretta"/>	-->
+   </campo>   
+   <campo nomecampo="meseDiRiferimento">   
+	<regola codiceErrore="XSD_3" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>01|02|03|04|05|06|07|08|09|10|11|12</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="B03" descrizioneErrore="Errore periodo di riferimento" nome="regolaDataCorrentePosterioreAnnoMeseRif">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="codiceAziendaSanitariaErogante">   
+	<regola codiceErrore="XSD_4" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{6}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="B30" descrizioneErrore="Errore codice ASL trasmessa" nome="regolaDominioValoriAnagraficaConcatenatiPeriodoAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_RIB_ASL</value>
+				</entry>
+				<entry>
+					<key>separatore</key>
+					<value>#</value>
+				</entry>
+				<entry>
+					<key>listaCampiDaConcatenare</key>
+					<value>regioneErogante|codiceAziendaSanitariaErogante|tipoCanale</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>	
+	<regola codiceErrore="B42" descrizioneErrore="Errore di dominio codice ASL" nome="regolaDominioValoriAnagraficaConcatenatiPeriodoAnno">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_RIB_ASL</value>
+				</entry>
+				<entry>
+					<key>separatore</key>
+					<value>#</value>
+				</entry>
+				<entry>
+					<key>listaCampiDaConcatenare</key>
+					<value>regioneErogante|codiceAziendaSanitariaErogante|tipoCanale</value>
+				</entry>
+				<entry>
+					<key>mese</key>
+					<value>meseDiRiferimento</value>
+				</entry>
+				<entry>
+					<key>anno</key>
+					<value>annoDiRiferimento</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>	
+	<regola codiceErrore="D01" descrizioneErrore="Errore di dominio codice ASL" nome="regolaDominioCampoUgualeValoreAnagrafica">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoCanale</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>R</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_ASL_R</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D01" descrizioneErrore="Errore di dominio codice ASL" nome="regolaDominioCampoUgualeValoreAnagrafica">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoCanale</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>P</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_ASL_P_D</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D01" descrizioneErrore="Errore di dominio codice ASL" nome="regolaDominioCampoUgualeValoreAnagrafica">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>campoCondizionante</key>
+					<value>tipoCanale</value>
+				</entry>
+				<entry>
+					<key>parametroCondizionante</key>
+					<value>D</value>
+				</entry>
+				<entry>
+					<key>nomeTabella</key>
+					<value>ANAG_DIR_ASL_P_D</value>
+				</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+   </campo>  
+   <campo nomecampo="identificativoAssistito">
+	<regola codiceErrore="B17" descrizioneErrore="Errore valorizzazione Validità Assistito" nome="regolaB17Diretta"/>   
+	<regola codiceErrore="XSD_8" descrizioneErrore="Coerenza dimensionale" nome="regolaLunghezzaCampoObbligatorio">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>size</key>
+				  <value>88</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola> 
+	<regola codiceErrore="B16" descrizioneErrore="Errore coerenza dati assistito" nome="regola3campiTuttiPieniOTuttiVuoti">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>campo2</key>
+				  <value>tipologiaCodIdentAssistito</value>
+			   </entry>
+			   <entry>
+				  <key>campo3</key>
+				  <value>validitaCodIdentAssistito</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D37" descrizioneErrore="Errore id assistito" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo>
+   <campo nomecampo="validitaCodIdentAssistito">   
+	<regola codiceErrore="XSD_9" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>0|1</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="tipologiaCodIdentAssistito">   
+	<regola codiceErrore="XSD_10" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>0|1|2|3|4|97|98|99</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="dataNascitaAssistito">   
+	<regola codiceErrore="XSD_11" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[0-9]{4}-[0-9]{2}-[0-9]{2}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D89" descrizioneErrore="Errore Data Nascita Assistito" nome="regolaDataNascitaAnonimato">
+		<parametri>
+			<parametriMap>
+				<entry>
+					<key>nomeCampoCondizionante</key>
+					<value>dataErogazione</value>
+				</entry>
+				<entry>
+					<key>valoreMinimo</key>
+					<value>0</value>
+				</entry>
+				<entry>
+					<key>valoreMassimo</key>
+					<value>150</value>
+			</entry>
+			</parametriMap>
+		</parametri>
+	</regola>
+	<regola codiceErrore="D15" descrizioneErrore="Errore data di nascita dell'assistito" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo>  
+   <campo nomecampo="sessoAssistito">   
+	<regola codiceErrore="XSD_12" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D28" descrizioneErrore="Errore sesso dell'assistito" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo>
+   <campo nomecampo="cittadinanza">   
+	<regola codiceErrore="XSD_14" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessiCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1|2|9</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D29" descrizioneErrore="Errore cittadinanza dell'assistito" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo> 
+   <campo nomecampo="codiceIstituzioneCompetente">   
+	<regola codiceErrore="XSD_16" descrizioneErrore="Coerenza dimensionale" nome="regolaLunghezzaCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>size</key>
+				  <value>28</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo>
+   <campo nomecampo="tipoOperazione">   
+	<regola codiceErrore="XSD_17" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessi">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>I|V|C</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="tipoCanale">   
+	<regola codiceErrore="XSD_18" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessiCampoFacoltativo">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>P|D|R</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+   </campo> 
+   <campo nomecampo="codiceEsenzione">   
+	<regola codiceErrore="XSD_19" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9A-Za-z]{1,6}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D39" descrizioneErrore="Errore codice esenzione" nome="regolaDirettaD39"/>
+   </campo>  
+   <campo nomecampo="tipoErogazione">   
+	<regola codiceErrore="XSD_20" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D24" descrizioneErrore="Errore codice tipo erogazione" nome="regolaListaValoriAmmessiCampoFacoltativo">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>01|02|03|04|05|06</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>	
+   </campo> 
+   <campo nomecampo="tipoDiEsenzione">   
+	<regola codiceErrore="XSD_21" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessiCampoFacoltativo">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>0|1|2|3|4|5|9</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="B29" descrizioneErrore="Errore codice esenzione" nome="regolaB29Diretta"/>
+	<regola codiceErrore="D23" descrizioneErrore="Errore codice tipo esenzione" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo> 
+   <campo nomecampo="dataErogazione">   
+	<regola codiceErrore="XSD_24" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[0-9]{4}-[0-9]{2}-[0-9]{2}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="B20" descrizioneErrore="Errore data di erogazione" nome="regolaObbligatorietaDataErogazioneDiretta"/>
+   </campo> 
+   <campo nomecampo="quotaFissaAssistito">   
+	<regola codiceErrore="XSD_25" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{1,3}\.{1}[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="quotaPercentualeAssistito">   
+	<regola codiceErrore="XSD_26" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{1,3}\.{1}[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="costoServizioRicetta">   
+	<regola codiceErrore="XSD_28" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>\b[0-9]{1,4}\.{1}[0-9]{2}\b</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+	<regola codiceErrore="D38" descrizioneErrore="Errore costo del servizio per ricetta" nome="regolaAlmenoUnCampoValorizzato">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>campoCondizionante</key>
+				  <value>costoServizio</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="tipoPrescrittore">
+	<regola codiceErrore="XSD_30" descrizioneErrore="Coerenza dominio valori" nome="regolaListaValoriAmmessiCampoFacoltativo">
+        <parametri>
+            <parametriMap>
+				<entry>
+					<key>listaValoriAmmessi</key>
+					<value>F|P|H|A|G|T|C|U|D|Z|I|X|B</value>
+				</entry>
+            </parametriMap>
+        </parametri>
+    </regola>
+	<regola codiceErrore="D27" descrizioneErrore="Errore codice tipo prescrittore" nome="regolaObbligatorietaNoImplicitoNoEsplicito"/>
+   </campo> 
+   <campo nomecampo="quantita">   
+	<regola codiceErrore="XSD_33" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>-{0,1}[0-9]{1,12}\.{0,1}[0-9]{0,2}</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="fattoreDiConversione">   
+	<regola codiceErrore="XSD_34" descrizioneErrore="Coerenza dimensionale" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>^[1-9]{1}[0-9]{0,5}$</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>  
+	<regola codiceErrore="B31" descrizioneErrore="Errore fattore di conversione" nome="regolaListaValoriAmmessiCondizionataListaValori">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>nomeCampoCondizionante</key>
+				  <value>tipoFarmaco</value>
+			   </entry>
+			   <entry>
+				  <key>listaValoriAmmessiCampoCondizionante</key>
+				  <value>4|5|6</value>
+			   </entry>
+			   <entry>
+				  <key>listaValoriAmmessi</key>
+				  <value>1</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>	
+   </campo> 
+   <campo nomecampo="costoAcquisto">   
+	<regola codiceErrore="XSD_36" descrizioneErrore="Coerenza dominio valori" nome="regolaRegex">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>-{0,1}[0-9]{1,8}\.{1}[0-9]{2,5}</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+   <campo nomecampo="costoServizio">   
+	<regola codiceErrore="XSD_37" descrizioneErrore="Coerenza dominio valori" nome="regolaRegexCampoFacoltativo">
+		 <parametri>
+			<parametriMap>
+			   <entry>
+				  <key>regex</key>
+				  <value>-{0,1}[0-9]{1,4}\.{1}[0-9]{2}</value>
+			   </entry>
+			</parametriMap>
+		 </parametri>
+	</regola>
+   </campo> 
+</flusso>
