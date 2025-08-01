@@ -218,7 +218,7 @@ Per ciascun flusso, è necessario predisporre uno o più file di input in format
 Di seguito la tabella col mapping tra le cartelle e i relativi flussi e la context-root da chiamare per l'invio ed il monitoraggio.
 
 | Nome Repository |Nome cartella| AREA| Flusso |Context Root|
-|-----------------|--------|------------------| -----|
+|-----------------|--------|------------------| -----|-----|
 | sdk-engine-dispovigilanza-java | dispovig | DISPOVIG |DISPOVIG| dispovig |
 | sdk-engine-prontosoccorso-java | emur-ps  |EMUR | PS1| emur |
 | sdk-engine-vaccinianagraficamobilita-java | avn-mobilita-anag |AVT | AVM | vaccinianagraficamobilita |
@@ -240,8 +240,8 @@ Di seguito la tabella col mapping tra le cartelle e i relativi flussi e la conte
 | sdk-engine-siarreprof-java|siar-reprof|SIAR|reprof| SIAR_OREPROF |
 | sdk-engine-siarriab-java|siar-reprof|SIAR|riab| SIAR_RIAB |
 | sdk-engine-sicofprestind-java|sicof-prestind|SICOF|prestind| SICOF_PRESTIND |
-| sdk-engine-sicofcontatto-java|sicof-contatto|SICOF|contatto| SICOF_PRESTGRUP |
-| sdk-engine-sicofprestgrup-java|sicof-prestgrup|SICOF|prestgrup| SICOF_CONTATTO |
+| sdk-engine-sicofcontatto-java|sicof-contatto|SICOF|contatto| SICOF_CONTATTO |
+| sdk-engine-sicofprestgrup-java|sicof-prestgrup|SICOF|prestgrup| SICOF_PRESTGRUP |
 
 
 ## 9 Avvio Validation Engine
@@ -250,7 +250,7 @@ Il nome del jar da eseguire dovrà essere lo stesso del jar generato al punto 2.
 Per il corretto avvio è necessario specificare nella variabile "--config="
 
 ```bash
-cd <Workspace>/<jar_sdk>
+cd <Workspace>
 
 java -jar -Dserver.port=9091 "C:\sdk\sdk-engine-siarriab-java-1.0.0-SNAPSHOT.jar" --config="C:/sdk/properties/config-flusso-siar-riab.properties"
 
