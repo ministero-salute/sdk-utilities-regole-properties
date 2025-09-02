@@ -238,7 +238,7 @@ Di seguito la tabella col mapping tra le cartelle e i relativi flussi e la conte
 | sdk-engine-sismterritorialecontatti-java |sism-ter-cont | TER | CNT | sismterritorialecontatti |
 | sdk-engine-siarpicvalini-java|siar-picvalini|SIAR|picvalini| SIAR_PICVALINI |
 | sdk-engine-siarreprof-java|siar-reprof|SIAR|reprof| SIAR_OREPROF |
-| sdk-engine-siarriab-java|siar-reprof|SIAR|riab| SIAR_RIAB |
+| sdk-engine-siarriab-java|siar-riab|SIAR|riab| SIAR_RIAB |
 | sdk-engine-sicofprestind-java|sicof-prestind|SICOF|prestind| SICOF_PRESTIND |
 | sdk-engine-sicofcontatto-java|sicof-contatto|SICOF|contatto| SICOF_CONTATTO |
 | sdk-engine-sicofprestgrup-java|sicof-prestgrup|SICOF|prestgrup| SICOF_PRESTGRUP |
