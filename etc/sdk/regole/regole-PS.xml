@@ -606,7 +606,7 @@
             <parametriMap>
                <entry>
                   <key>size</key>
-                  <value>44</value>
+                  <value>88</value>
                </entry>
             </parametriMap>
          </parametri>
@@ -1123,3 +1123,4 @@
    </campo> 
 
 </flusso>
+
